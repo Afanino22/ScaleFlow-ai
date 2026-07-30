@@ -77,8 +77,8 @@ function CaseStudies() {
       {/* Hero */}
       <section className="ai-hero">
         <div className="ai-hero-grid" />
-        <div className="ai-hero-glow ai-hero-glow-1" />
-        <div className="ai-hero-glow ai-hero-glow-2" />
+        <div className="ai-hero-glow ai-hero-glow-1 parallax-slow" />
+        <div className="ai-hero-glow ai-hero-glow-2 parallax-slow" />
 
         <div className="section-padding relative mx-auto w-full max-w-7xl pt-28 pb-16 text-center md:pt-32 md:pb-20">
           <span className="mb-4 inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">

@@ -370,9 +370,9 @@ function Home() {
         <div className="hero-particle hero-particle-5" />
 
         {/* Glow orbs */}
-        <div className="ai-hero-glow ai-hero-glow-1" />
-        <div className="ai-hero-glow ai-hero-glow-2" />
-        <div className="ai-hero-glow ai-hero-glow-3" />
+        <div className="ai-hero-glow ai-hero-glow-1 parallax-slow" />
+        <div className="ai-hero-glow ai-hero-glow-2 parallax-slow" />
+        <div className="ai-hero-glow ai-hero-glow-3 parallax-fast" />
 
         <div className="section-padding relative mx-auto grid w-full max-w-7xl items-center gap-12 pt-28 pb-20 lg:grid-cols-2 md:pt-32 md:pb-28">
           {/* ── Left: Text ── */}

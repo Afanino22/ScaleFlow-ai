@@ -44,6 +44,9 @@ export const Route = createRootRoute({
           "Answer enquiries 24/7, capture every lead, automate appointment booking, and reduce admin with intelligent AI receptionists built for service businesses.",
       },
       { name: "twitter:image", content: "https://scaleflow.ctonew.app/og-image.png" },
+      // Verification / canonical
+      { name: "robots", content: "index, follow" },
+      { rel: "canonical", href: "https://scaleflow.ctonew.app" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -75,7 +78,7 @@ function RootComponent() {
           {/* Scroll Progress Bar */}
           <div className="scroll-progress" style={{ width: "0%" }} id="scroll-progress" />
           <Header />
-          <main className="min-h-screen bg-white pt-16 pb-16 md:pb-0">
+          <main className="page-transition min-h-screen bg-white pt-16 pb-16 md:pb-0">
             <Outlet />
           </main>
           <Footer />
@@ -87,7 +90,7 @@ function RootComponent() {
                 Calculate ROI
               </Link>
               <Link to="/demo" className="flex-1 rounded-lg bg-teal px-3 py-2 text-center text-xs font-bold text-obsidian transition-all hover:shadow-lg hover:shadow-teal/30">
-                Try Live Demo
+                Book Demo
               </Link>
             </div>
           </div>
@@ -106,6 +109,26 @@ function RootDocument({ children }: { children: ReactNode }) {
         <noscript>
           <img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerPolicy="no-referrer-when-downgrade" />
         </noscript>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "ScaleFlow AI",
+              url: "https://scaleflow.ctonew.app",
+              description: "ScaleFlow AI builds AI Digital Employees for service-based businesses — 24/7 lead qualification, automated booking, and workflow automation.",
+              email: "contact@scaleflowai.co.uk",
+              telephone: "+44 121 234 5678",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Birmingham",
+                addressCountry: "UK",
+              },
+              sameAs: [],
+            }),
+          }}
+        />
         <Scripts />
         <script
           type="text/javascript"
@@ -124,14 +147,45 @@ function RootDocument({ children }: { children: ReactNode }) {
                 }
                 v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
               })(document, 'script');
-              // Scroll progress bar
-              document.addEventListener('scroll', function() {
-                var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+              // Scroll progress bar + parallax
+              var glowEls = d.querySelectorAll('.ai-hero-glow, .parallax-slow, .parallax-fast');
+              d.addEventListener('scroll', function() {
+                var winScroll = d.body.scrollTop || d.documentElement.scrollTop;
+                var height = d.documentElement.scrollHeight - d.documentElement.clientHeight;
                 var scrolled = (winScroll / height) * 100;
-                var el = document.getElementById('scroll-progress');
+                var el = d.getElementById('scroll-progress');
                 if (el) el.style.width = scrolled + '%';
+
+                // Parallax: shift background glow elements
+                for (var i = 0; i < glowEls.length; i++) {
+                  var speed = glowEls[i].classList.contains('parallax-fast') ? 0.15 : 0.05;
+                  glowEls[i].style.transform = 'translateY(' + (winScroll * speed) + 'px)';
+                }
               });
+
+              // Intersection Observer for scroll reveal
+              if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function(entries) {
+                  entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add('revealed');
+                      observer.unobserve(entry.target);
+                    }
+                  });
+                }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+                var revealEls = d.querySelectorAll('.reveal');
+                for (var i = 0; i < revealEls.length; i++) {
+                  observer.observe(revealEls[i]);
+                }
+              } else {
+                // Fallback: show all immediately
+                var fallbackEls = d.querySelectorAll('.reveal');
+                for (var i = 0; i < fallbackEls.length; i++) {
+                  fallbackEls[i].classList.add('revealed');
+                }
+              }
             `,
           }}
         />
