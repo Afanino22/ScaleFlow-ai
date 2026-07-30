@@ -11,7 +11,7 @@ const footerLinks = {
   Company: [
     { to: "/about", label: "About Us" },
     { to: "/pricing", label: "Pricing" },
-    { to: "/case-studies", label: "Case Studies" },
+    { to: "/demo", label: "Live Demo" },
     { to: "/faq", label: "FAQ" },
     { to: "/contact", label: "Contact" },
   ],

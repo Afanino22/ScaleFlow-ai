@@ -1,32 +1,9 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   component: Home,
 });
-
-/* ─── Live Stats Counter ─── */
-function useCountUp(target: number, duration: number, trigger: boolean) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!trigger) return;
-    let start = 0;
-    const step = Math.ceil(target / (duration / 16));
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) { setCount(target); clearInterval(timer); }
-      else setCount(start);
-    }, 16);
-    return () => clearInterval(timer);
-  }, [target, duration, trigger]);
-  return count;
-}
-
-function formatCount(n: number): string {
-  if (n >= 1000000) return (n / 1000000).toFixed(1) + "M";
-  if (n >= 1000) return (n / 1000).toFixed(1) + "k";
-  return n.toLocaleString();
-}
 
 /* ─── Scroll Visibility Hook ─── */
 function useInView(ref: React.RefObject<HTMLElement | null>, threshold = 0.3) {
@@ -41,40 +18,6 @@ function useInView(ref: React.RefObject<HTMLElement | null>, threshold = 0.3) {
     return () => obs.disconnect();
   }, [ref, threshold]);
   return inView;
-}
-
-/* ─── Live Stats Component ─── */
-function LiveStats() {
-  const ref = useRef<HTMLDivElement>(null);
-  const visible = useInView(ref, 0.2);
-  const stats = [
-    { icon: "📞", label: "Calls Answered", target: 12847 },
-    { icon: "📅", label: "Appointments Booked", target: 6432 },
-    { icon: "⏱️", label: "Hours Saved", target: 24500 },
-    { icon: "💷", label: "Revenue Captured", target: 3.2, isCurrency: true },
-    { icon: "🏢", label: "Businesses Automated", target: 340 },
-    { icon: "💬", label: "Messages Processed", target: 89000 },
-  ];
-  return (
-    <div ref={ref} className="live-stats-section">
-      <div className="mx-auto max-w-7xl px-6 py-8 sm:px-8 lg:px-16">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {stats.map((s) => {
-            const count = useCountUp(s.target, 2000, visible);
-            return (
-              <div key={s.label} className="live-stat-card">
-                <span className="text-2xl mb-2 block">{s.icon}</span>
-                <div className="live-stat-number">
-                  {s.isCurrency ? `£${(count as number).toFixed(1)}M` : formatCount(count as number)}{s.label === "Businesses Automated" ? "+" : ""}
-                </div>
-                <p className="text-[11px] font-medium text-gray-500 mt-1">{s.label}</p>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
 }
 
 /* ─── Demo Simulator Component ─── */
@@ -186,69 +129,6 @@ function DemoSimulator() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── Testimonials Carousel Component ─── */
-function TestimonialsCarousel() {
-  const testimonials = [
-    { name: "Dr. James Patel", biz: "SmileCare Dental", industry: "Dental", quote: "ScaleFlow AI transformed our front desk. We went from losing 40% of after-hours enquiries to capturing every single one. Our hygienists' schedules are now fully booked two weeks out.", before: "Response time: 12hrs", after: "Response time: 5 seconds", rating: 5 },
-    { name: "Rebecca Thornton", biz: "Thornton Legal", industry: "Law", quote: "The AI qualifies leads before they reach our solicitors. We've saved over 15 hours a week on admin — that's nearly two full days of billable time recovered.", before: "Missed calls: 35%", after: "Missed calls: 0%", rating: 5 },
-    { name: "Mark Davies", biz: "Davies Estates", industry: "Property", quote: "Our AI agent handles viewing requests at 11pm just as well as at 11am. We've seen a 40% increase in booked viewings since going live.", before: "Viewings/week: 12", after: "Viewings/week: 19", rating: 5 },
-    { name: "Lisa Chen", biz: "AutoPrime Motors", industry: "Automotive", quote: "The voice agent alone has paid for itself 10x over. Every test drive enquiry gets an instant callback. Our sales team now only talks to qualified, ready-to-buy customers.", before: "Test drives: 8/mo", after: "Test drives: 22/mo", rating: 5 },
-  ];
-  const [current, setCurrent] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setInterval>>();
-
-  const resetTimer = useCallback(() => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => setCurrent(c => (c + 1) % testimonials.length), 6000);
-  }, [testimonials.length]);
-
-  useEffect(() => { resetTimer(); return () => clearInterval(timerRef.current); }, [resetTimer]);
-
-  const goTo = (i: number) => { setCurrent(i); resetTimer(); };
-  const t = testimonials[current];
-
-  return (
-    <section className="testimonials-section section-padding">
-      <div className="mx-auto max-w-7xl">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
-          <span className="inline-block rounded-full border border-teal/20 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal mb-4">
-            💬 Client Stories
-          </span>
-          <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
-            Trusted by <span className="gradient-text">service businesses</span> like yours
-          </h2>
-        </div>
-        <div className="mx-auto max-w-3xl testimonial-slide" key={current}>
-          <div className="testimonial-card text-center">
-            <div className="flex justify-center mb-4">
-              {[...Array(t.rating)].map((_, i) => <span key={i} className="text-yellow-400 text-lg">★</span>)}
-            </div>
-            <p className="text-lg text-gray-300 leading-relaxed mb-6 italic">"{t.quote}"</p>
-            <div className="inline-flex items-center gap-4 mb-6 px-6 py-3 rounded-xl bg-teal/5 border border-teal/10">
-              <div className="text-center">
-                <p className="text-xs text-gray-500 mb-0.5">Before</p>
-                <p className="text-sm font-semibold text-red-400">{t.before}</p>
-              </div>
-              <span className="text-teal font-bold">→</span>
-              <div className="text-center">
-                <p className="text-xs text-gray-500 mb-0.5">After</p>
-                <p className="text-sm font-semibold text-teal">{t.after}</p>
-              </div>
-            </div>
-            <p className="font-bold text-white">{t.name}</p>
-            <p className="text-sm text-gray-500">{t.biz} · {t.industry}</p>
-          </div>
-        </div>
-        <div className="flex justify-center gap-3 mt-8">
-          {testimonials.map((_, i) => (
-            <button key={i} className={`carousel-dot ${i === current ? "active" : ""}`} onClick={() => goTo(i)} />
-          ))}
         </div>
       </div>
     </section>
@@ -517,36 +397,7 @@ function Home() {
             </div>
           </div>
         </div>
-
-        {/* ── Live Metric Strip ── */}
-        <div className="absolute bottom-0 left-0 right-0 border-t border-white/5 bg-black/30 backdrop-blur-md">
-          <div className="mx-auto max-w-7xl px-6 py-4 sm:px-8 lg:px-16">
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-              {[
-                { icon: '📞', label: 'Calls Answered', value: '247', sub: 'today' },
-                { icon: '💬', label: 'Conversations', value: '34', sub: 'active now' },
-                { icon: '📅', label: 'Appointments', value: '128', sub: 'booked today' },
-                { icon: '💷', label: 'Revenue', value: '£12,450', sub: 'captured' },
-                { icon: '⚡', label: 'Response', value: '8s', sub: 'average' },
-                { icon: '🤖', label: 'AI Agents', value: '6', sub: 'running' },
-              ].map((stat) => (
-                <div key={stat.label} className="stat-card flex items-center gap-3">
-                  <span className="text-lg">{stat.icon}</span>
-                  <div>
-                    <p className="text-[11px] font-medium text-gray-400">{stat.label}</p>
-                    <p className="text-sm font-bold text-white">{stat.value} <span className="text-[11px] font-normal text-gray-500">{stat.sub}</span></p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </section>
-
-      {/* ════════════════════════════════════════════ */}
-      {/* LIVE STATISTICS BAR */}
-      {/* ════════════════════════════════════════════ */}
-      <LiveStats />
 
       {/* ════════════════════════════════════════════ */}
       {/* INTEGRATIONS */}
@@ -619,7 +470,7 @@ function Home() {
       {/* ════════════════════════════════════════════ */}
       <DemoSimulator />
 
-      {/* ════════════════════════════════════════════ */}
+      {/* ═════════���══════════════════════════════════ */}
       {/* SERVICES OVERVIEW */}
       {/* ════════════════════════════════════════════ */}
       <section className="section-padding">
@@ -790,9 +641,25 @@ function Home() {
       </section>
 
       {/* ════════════════════════════════════════════ */}
-      {/* TESTIMONIALS */}
+      {/* TRY IT FREE CTA */}
       {/* ════════════════════════════════════════════ */}
-      <TestimonialsCarousel />
+      <section className="section-padding text-center" style={{ background: "#06060C" }}>
+        <div className="mx-auto max-w-3xl">
+          <span className="mb-4 inline-block rounded-full border border-teal/20 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
+            🚀 Get Started
+          </span>
+          <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
+            Try it free for <span className="text-teal">7 days</span>
+          </h2>
+          <p className="mb-8 text-lg text-gray-400">
+            No calls. No commitment. See your Digital Employee in action with a personalised demo environment.
+          </p>
+          <Link to="/booking" className="btn-primary-lg text-base">
+            Start Your Free Trial
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </Link>
+        </div>
+      </section>
 
       {/* ════════════════════════════════════════════ */}
       {/* HOW IT WORKS */}
