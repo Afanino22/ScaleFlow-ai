@@ -137,7 +137,7 @@ export default function ChatDemo() {
 
       {/* Chat panel */}
       {open && (
-        <div className="fixed bottom-36 right-4 z-50 flex w-[calc(100vw-2rem)] max-w-sm flex-col rounded-2xl border border-gray-200 bg-white shadow-2xl md:bottom-20 md:right-6 animate-fade-in-up">
+        <div className="fixed bottom-36 right-4 z-50 flex w-[calc(100vw-2rem)] max-w-sm flex-col rounded-2xl border border-white/10 bg-[#0A0A0F] shadow-2xl md:bottom-20 md:right-6 animate-fade-in-up">
           {/* Header */}
           <div className="flex items-center gap-3 rounded-t-2xl bg-obsidian px-5 py-4">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal text-sm font-bold text-obsidian">SF</div>
@@ -155,7 +155,7 @@ export default function ChatDemo() {
                   className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                     msg.role === "user"
                       ? "rounded-br-md bg-teal text-obsidian"
-                      : "rounded-bl-md bg-gray-100 text-gray-700"
+                      : "rounded-bl-md bg-white/[0.06] text-gray-300"
                   }`}
                 >
                   {msg.text.split('\n').map((line, j) => (
@@ -169,7 +169,7 @@ export default function ChatDemo() {
 
           {/* Lead capture / CTA */}
           {capturedLead?.name && capturedLead?.email && (
-            <div className="border-t border-gray-100 px-5 py-3">
+            <div className="border-t border-white/5 px-5 py-3">
               <Link
                 to="/booking"
                 className="btn-primary w-full justify-center text-xs"
@@ -181,14 +181,14 @@ export default function ChatDemo() {
           )}
 
           {/* Input */}
-          <div className="flex items-center gap-2 border-t border-gray-100 px-4 py-3">
+          <div className="flex items-center gap-2 border-t border-white/5 px-4 py-3">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSend()}
               placeholder="Ask me anything..."
-              className="flex-1 rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm outline-none transition-colors focus:border-teal focus:bg-white"
+              className="flex-1 rounded-lg border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm text-white placeholder-gray-500 outline-none transition-colors focus:border-teal/50 focus:bg-white/[0.06]"
             />
             <button
               onClick={handleSend}

@@ -86,7 +86,7 @@ function RootComponent() {
           {/* Floating mobile CTA */}
           <div className="mobile-cta">
             <div className="mx-auto flex max-w-lg items-center gap-3">
-              <Link to="/roi" className="flex-1 rounded-lg border border-gray-300 px-3 py-2 text-center text-xs font-medium text-gray-600 transition-colors hover:border-teal hover:text-teal">
+              <Link to="/roi" className="flex-1 rounded-lg border border-white/20 px-3 py-2 text-center text-xs font-medium text-gray-300 transition-colors hover:border-teal hover:text-teal">
                 Calculate ROI
               </Link>
               <Link to="/demo" className="flex-1 rounded-lg bg-teal px-3 py-2 text-center text-xs font-bold text-obsidian transition-all hover:shadow-lg hover:shadow-teal/30">
