@@ -11,14 +11,22 @@ const footerLinks = {
   Company: [
     { to: "/about", label: "About Us" },
     { to: "/pricing", label: "Pricing" },
+    { to: "/case-studies", label: "Case Studies" },
     { to: "/faq", label: "FAQ" },
     { to: "/contact", label: "Contact" },
   ],
   Industries: [
-    { to: "/services", label: "Dental" },
-    { to: "/services", label: "Legal" },
-    { to: "/services", label: "Real Estate" },
-    { to: "/services", label: "Automotive" },
+    { to: "/industries", label: "Dental" },
+    { to: "/industries", label: "Legal" },
+    { to: "/industries", label: "Real Estate" },
+    { to: "/industries", label: "Automotive" },
+    { to: "/industries", label: "All Industries →" },
+  ],
+  Resources: [
+    { to: "/demo", label: "Live Demo" },
+    { to: "/roi", label: "ROI Calculator" },
+    { to: "/booking", label: "Start Free Trial" },
+    { to: "/contact", label: "Book a Call" },
   ],
 };
 
