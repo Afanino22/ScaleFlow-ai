@@ -48,7 +48,7 @@ const faqs = [
       },
       {
         q: "What ROI should I expect?",
-        a: "Our clients typically see 5–10x ROI within the first 3 months. A dental clinic capturing 3 extra high-value patients covers their annual retainer in under 2 months. A law firm saving 3 hours/day of billable time recovers their monthly retainer in a single day.",
+        a: "ROI depends on your lead volume, average value, and response times. Use our ROI calculator to model your specific scenario. Most service businesses can recover their monthly retainer within the first few converted leads.",
       },
       {
         q: "Can I see a demo before committing?",

@@ -137,8 +137,7 @@ function Pricing() {
             <span className="text-teal">Massive ROI.</span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-gray-300">
-            Every plan pays for itself within weeks. Our average client sees a 5–10x return
-            on their investment.
+            Every plan is designed to pay for itself within weeks. Use our ROI calculator to estimate your return.
           </p>
         </div>
       </section>

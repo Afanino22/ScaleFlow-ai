@@ -282,6 +282,7 @@ function ROICalculator() {
                 <button onClick={calculate} className="btn-primary w-full justify-center text-base">
                   Calculate My Savings
                 </button>
+                <p className="text-[11px] text-gray-500 text-center mt-2">Example values shown — adjust sliders for your business</p>
               </div>
             </div>
 

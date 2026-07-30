@@ -30,7 +30,7 @@ const services = [
     subtitle: "AI Voice Receptionist",
     tier: "Enterprise",
     desc: "Natural-sounding AI voice agent that answers inbound calls 24/7 — qualifies leads, answers questions, and books appointments. Transfers to a human when needed.",
-    problem: "60%+ of inbound calls go to voicemail. Voicemail response rate is below 10%. Every missed call is lost revenue.",
+    problem: "Calls go to voicemail after hours. Voicemail often goes unchecked. Every missed call is lost revenue.",
     features: [
       "Natural conversation with custom persona",
       "Real-time speech recognition & synthesis",
@@ -48,7 +48,7 @@ const services = [
     subtitle: "Intelligent Lead Scoring Engine",
     tier: "Growth • Enterprise",
     desc: "An AI pipeline that scores every lead on readiness, budget fit, and urgency. Hot leads get instant responses; cold leads get automated nurture sequences.",
-    problem: "40% of staff time wasted on unqualified leads. Team morale drops when effort doesn't convert.",
+    problem: "Staff spend hours on unqualified leads that don't convert. Team morale drops when effort doesn't convert.",
     features: [
       "Multi-source lead capture (web, email, chat, phone)",
       "AI-driven scoring & classification",
@@ -84,7 +84,7 @@ const services = [
     subtitle: "AI Email Response Agent",
     tier: "Growth • Enterprise",
     desc: "Connects to your inbox, analyses incoming emails, drafts intelligent responses, and logs interactions to your CRM. Human reviews sensitive replies first.",
-    problem: "Professionals spend 3–5 hours/day on repetitive emails. This blocks billable work and causes slow response.",
+    problem: "Professionals spend hours each day on repetitive emails. This blocks billable work and causes slow response.",
     features: [
       "Gmail & Outlook integration",
       "AI email classification & prioritisation",

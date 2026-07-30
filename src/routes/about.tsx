@@ -6,8 +6,8 @@ export const Route = createFileRoute("/about")({
 
 const stats = [
   { value: "5+", label: "Premium AI Services" },
-  { value: "90%", label: "Gross Margin" },
-  { value: "5–10x", label: "Average Client ROI" },
+  { value: "Launched 2026", label: "Birmingham UK" },
+  { value: "Our goal", label: "Pays for itself within 30 days" },
   { value: "24/7", label: "Digital Employee Uptime" },
 ];
 

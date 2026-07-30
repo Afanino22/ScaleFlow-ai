@@ -193,7 +193,7 @@ const services = [
       </svg>
     ),
     title: "BookFlow",
-    desc: "Automated scheduling with smart reminders that slash no-shows by 70%.",
+    desc: "Automated scheduling with smart reminders to reduce no-shows.",
   },
   {
     icon: (
@@ -220,10 +220,10 @@ const services = [
 ];
 
 const industries = [
-  { name: "Dental Clinics", stat: "3 extra patients/week" },
-  { name: "Law Firms", stat: "12 hrs saved/week" },
-  { name: "Estate Agents", stat: "100% lead capture" },
-  { name: "Car Dealerships", stat: "2x test-drive bookings" },
+  { name: "Dental Clinics", stat: "24/7 booking & triage" },
+  { name: "Law Firms", stat: "Automated client intake" },
+  { name: "Estate Agents", stat: "Instant viewing bookings" },
+  { name: "Car Dealerships", stat: "Test-drive scheduling" },
 ];
 
 const pricingPreview = [
@@ -532,10 +532,10 @@ function Home() {
             {[
               { feature: "Availability", trad: "9-5, Mon-Fri", ours: "24/7/365", tradIcon: "❌", oursIcon: "✅" },
               { feature: "Holidays & Sick Days", trad: "Annual leave, sick days", ours: "Never takes a day off", tradIcon: "❌", oursIcon: "✅" },
-              { feature: "Response Time", trad: "Hours or days", ours: "Under 5 seconds", tradIcon: "❌", oursIcon: "✅" },
+              { feature: "Response Time", trad: "Hours or days", ours: "Answers in seconds", tradIcon: "❌", oursIcon: "✅" },
               { feature: "Cost", trad: "£25k–35k/year", ours: "From £500/month", tradIcon: "❌", oursIcon: "✅" },
-              { feature: "Missed Calls", trad: "30–60% unanswered", ours: "0% missed", tradIcon: "❌", oursIcon: "✅" },
-              { feature: "Scalability", trad: "One person at a time", ours: "Unlimited conversations", tradIcon: "❌", oursIcon: "✅" },
+              { feature: "Missed Calls", trad: "Often go to voicemail", ours: "Near-zero missed calls", tradIcon: "❌", oursIcon: "✅" },
+              { feature: "Scalability", trad: "One person at a time", ours: "Handles every enquiry simultaneously", tradIcon: "❌", oursIcon: "✅" },
               { feature: "Training", trad: "Weeks to train", ours: "Deployed in days", tradIcon: "❌", oursIcon: "✅" },
             ].map((row, i) => (
               <div key={i} className="comparison-row" style={{ background: i % 2 === 0 ? "rgba(255,255,255,0.01)" : "transparent" }}>
