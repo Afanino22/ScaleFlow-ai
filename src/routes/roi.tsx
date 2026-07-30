@@ -235,7 +235,7 @@ function ROICalculator() {
                     onChange={(e) => { setLeads(Number(e.target.value)); setCalculated(false); }}
                     className="w-full accent-teal"
                   />
-                  <div className="flex justify-between text-xs text-gray-600"><span>5</span><span>500</span></div>
+                  <div className="flex justify-between text-xs text-gray-500"><span>5</span><span>500</span></div>
                 </div>
 
                 <div>
@@ -248,7 +248,7 @@ function ROICalculator() {
                     onChange={(e) => { setTicket(Number(e.target.value)); setCalculated(false); }}
                     className="w-full accent-teal"
                   />
-                  <div className="flex justify-between text-xs text-gray-600"><span>£20</span><span>£2,000</span></div>
+                  <div className="flex justify-between text-xs text-gray-500"><span>£20</span><span>£2,000</span></div>
                 </div>
 
                 <div>
@@ -276,7 +276,7 @@ function ROICalculator() {
                     onChange={(e) => { setAdminHours(Number(e.target.value)); setCalculated(false); }}
                     className="w-full accent-teal"
                   />
-                  <div className="flex justify-between text-xs text-gray-600"><span>2h</span><span>60h</span></div>
+                  <div className="flex justify-between text-xs text-gray-500"><span>2h</span><span>60h</span></div>
                 </div>
 
                 <button onClick={calculate} className="btn-primary w-full justify-center text-base">

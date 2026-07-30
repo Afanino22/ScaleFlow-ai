@@ -107,7 +107,7 @@ function checkmark(val: string | boolean) {
     );
   }
   if (val === false) {
-    return <span className="text-sm text-gray-700">—</span>;
+    return <span className="text-sm text-gray-400">—</span>;
   }
   return <span className="text-xs font-medium text-gray-500">{val}</span>;
 }
@@ -153,7 +153,7 @@ function Pricing() {
                 className={`pricing-card relative rounded-2xl border-2 p-8 ${
                   tier.popular
                     ? "pricing-card-popular border-teal"
-                    : "border-gray-100 hover:border-teal/40"
+                    : "border-white/5 hover:border-teal/40"
                 }`}
               >
                 {tier.popular && (
@@ -162,12 +162,12 @@ function Pricing() {
                   </span>
                 )}
 
-                <h2 className="text-xl font-bold text-obsidian">{tier.name}</h2>
+                <h2 className="text-xl font-bold text-white">{tier.name}</h2>
                 <p className="mt-1 text-sm text-gray-500">{tier.subtitle}</p>
 
                 <div className="my-6">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-black text-obsidian">{tier.setup}</span>
+                    <span className="text-4xl font-black text-white">{tier.setup}</span>
                     <span className="text-sm text-gray-400">setup</span>
                   </div>
                   <div className="mt-1 flex items-baseline gap-1">
@@ -180,7 +180,7 @@ function Pricing() {
 
                 <ul className="mb-8 space-y-3">
                   {tier.includes.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-gray-600">
+                    <li key={item} className="flex items-start gap-3 text-sm text-gray-400">
                       <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-teal" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
@@ -190,7 +190,7 @@ function Pricing() {
                 </ul>
 
                 {tier.addons.length > 0 && (
-                  <div className="mb-8 rounded-lg bg-off-white p-4">
+                  <div className="mb-8 rounded-lg bg-white/[0.03] p-4">
                     <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">Available Add-ons</p>
                     {tier.addons.map((addon) => (
                       <p key={addon} className="text-sm text-gray-500">+ {addon}</p>
@@ -206,7 +206,7 @@ function Pricing() {
                   className={`mb-2 block w-full rounded-lg py-3 text-center text-sm font-bold transition-all ${
                     tier.popular
                       ? "bg-teal text-obsidian hover:shadow-lg hover:shadow-teal/30"
-                      : "border-2 border-obsidian text-obsidian hover:bg-obsidian hover:text-white"
+                      : "border-2 border-white/20 text-white hover:bg-white/10 "
                   }`}
                 >
                   Pay Setup Fee — {tier.setup}
@@ -226,10 +226,10 @@ function Pricing() {
       </section>
 
       {/* ─── Feature Comparison Table ─── */}
-      <section className="section-padding bg-off-white">
+      <section className="section-padding bg-white/[0.03]">
         <div className="mx-auto max-w-5xl">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-obsidian sm:text-4xl">
+            <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
               Compare <span className="gradient-text">features</span>
             </h2>
             <p className="mx-auto max-w-xl text-gray-500">
@@ -237,27 +237,27 @@ function Pricing() {
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white">
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-white">
             {/* Table header */}
             <div className="comparison-table-header hidden grid-cols-4 md:grid">
               <div className="p-4 pl-6 text-sm font-semibold text-gray-400">Feature</div>
-              <div className="p-4 text-center text-sm font-semibold text-gray-600">Starter</div>
+              <div className="p-4 text-center text-sm font-semibold text-gray-400">Starter</div>
               <div className="p-4 text-center text-sm font-semibold text-teal">Growth</div>
-              <div className="p-4 text-center text-sm font-semibold text-gray-600">Enterprise</div>
+              <div className="p-4 text-center text-sm font-semibold text-gray-400">Enterprise</div>
             </div>
 
             {/* Mobile header */}
             <div className="comparison-table-header grid grid-cols-4 md:hidden">
               <div className="p-3 pl-4 text-xs font-semibold text-gray-400">Feature</div>
-              <div className="p-3 text-center text-[10px] font-semibold text-gray-600">Starter</div>
+              <div className="p-3 text-center text-[10px] font-semibold text-gray-400">Starter</div>
               <div className="p-3 text-center text-[10px] font-semibold text-teal">Growth</div>
-              <div className="p-3 text-center text-[10px] font-semibold text-gray-600">Enterprise</div>
+              <div className="p-3 text-center text-[10px] font-semibold text-gray-400">Enterprise</div>
             </div>
 
             {featureRows.map((section) => (
               <div key={section.category}>
                 {/* Category header */}
-                <div className="border-t border-gray-100 bg-gray-50/50 px-6 py-3">
+                <div className="border-t border-white/5 bg-white/[0.03] px-6 py-3">
                   <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
                     {section.category}
                   </p>
@@ -268,7 +268,7 @@ function Pricing() {
                     key={item.feature}
                     className="comparison-row grid grid-cols-4 border-t border-gray-50 transition-colors hover:bg-teal/[0.03]"
                   >
-                    <div className="flex items-center px-4 py-3.5 pl-6 text-sm text-gray-700 md:px-6">
+                    <div className="flex items-center px-4 py-3.5 pl-6 text-sm text-gray-400 md:px-6">
                       {item.feature}
                     </div>
                     {item.tiers.map((t, i) => (
@@ -287,13 +287,13 @@ function Pricing() {
       {/* FAQ */}
       <section className="section-padding">
         <div className="mx-auto max-w-3xl">
-          <h2 className="mb-12 text-center text-3xl font-bold text-obsidian sm:text-4xl">
+          <h2 className="mb-12 text-center text-3xl font-bold text-white sm:text-4xl">
             Frequently Asked Questions
           </h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
-              <details key={faq.q} className="group rounded-xl border border-gray-200 bg-white transition-shadow hover:shadow-sm">
-                <summary className="flex cursor-pointer list-none items-center justify-between p-5 font-semibold text-obsidian transition-colors hover:text-teal">
+              <details key={faq.q} className="group rounded-xl border border-white/10 bg-white/[0.02] transition-shadow hover:shadow-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between p-5 font-semibold text-white transition-colors hover:text-teal">
                   {faq.q}
                   <svg className="h-5 w-5 text-gray-400 transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -309,7 +309,7 @@ function Pricing() {
       {/* CTA */}
       <section className="section-padding text-center">
         <div className="mx-auto max-w-2xl">
-          <h2 className="mb-4 text-2xl font-bold text-obsidian sm:text-3xl">
+          <h2 className="mb-4 text-2xl font-bold text-white sm:text-3xl">
             Still have questions?
           </h2>
           <p className="mb-8 text-gray-500">

@@ -6,8 +6,8 @@ export const Route = createFileRoute("/contact")({
 });
 
 const BUSINESS_EMAIL = "contact@scaleflowai.co.uk";
-const BUSINESS_PHONE = "+44 121 234 5678";
-const WHATSAPP_NUMBER = "441212345678";
+const BUSINESS_PHONE = "+44 7405 916374";
+const WHATSAPP_NUMBER = "447405916374";
 const CALENDLY_URL = "https://calendly.com/scaleflow-ai/discovery-call";
 
 function Contact() {
@@ -194,7 +194,7 @@ function Contact() {
                     <a href={`mailto:${BUSINESS_EMAIL}`} className="mt-1 block text-sm text-gray-400 transition-colors hover:text-teal">
                       {BUSINESS_EMAIL}
                     </a>
-                    <p className="mt-1 text-xs text-gray-600">We reply within 24 hours</p>
+                    <p className="mt-1 text-xs text-gray-500">We reply within 24 hours</p>
                   </div>
                 </div>
 
@@ -210,7 +210,7 @@ function Contact() {
                     <a href={`tel:${BUSINESS_PHONE.replace(/\s/g, "")}`} className="mt-1 block text-sm text-gray-400 transition-colors hover:text-teal">
                       {BUSINESS_PHONE}
                     </a>
-                    <p className="mt-1 text-xs text-gray-600">Mon–Fri, 9am–6pm GMT</p>
+                    <p className="mt-1 text-xs text-gray-500">Mon–Fri, 9am–6pm GMT</p>
                   </div>
                 </div>
 
@@ -231,7 +231,7 @@ function Contact() {
                     >
                       Chat with us on WhatsApp
                     </a>
-                    <p className="mt-1 text-xs text-gray-600">Quick responses, no bots</p>
+                    <p className="mt-1 text-xs text-gray-500">Quick responses, no bots</p>
                   </div>
                 </div>
 
@@ -246,7 +246,7 @@ function Contact() {
                   <div>
                     <h3 className="font-semibold text-white">Location</h3>
                     <p className="mt-1 text-sm text-gray-400">Birmingham, United Kingdom</p>
-                    <p className="mt-1 text-xs text-gray-600">Serving clients across the UK, US, Canada & Europe</p>
+                    <p className="mt-1 text-xs text-gray-500">Serving clients across the UK, US, Canada & Europe</p>
                   </div>
                 </div>
               </div>
@@ -266,7 +266,7 @@ function Contact() {
         </div>
       </section>
 
-      {/* Calendly Booking Section */}
+      {/* Booking Section */}
       <section className="section-padding" style={{ background: "#06060C" }}>
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="mb-4 text-3xl font-bold text-white">Book a <span className="gradient-text">discovery call</span></h2>
@@ -274,9 +274,9 @@ function Contact() {
             Pick a time that works for you. We'll learn about your business and show you
             exactly how ScaleFlow can help — in 15 minutes or less.
           </p>
-          <div className="overflow-hidden rounded-2xl border border-white/8 bg-white/[0.02]">
+          <div className="overflow-hidden rounded-2xl border border-white/8">
             <iframe
-              src={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=0a0a0f&text_color=ffffff&primary_color=00f5d4`}
+              src="https://cal.com/SCALEFLOWAI?embed_type=Inline&embed_domain=scaleflow.ctonew.app&theme=dark"
               width="100%"
               height="650"
               frameBorder="0"

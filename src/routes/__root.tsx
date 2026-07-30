@@ -78,7 +78,7 @@ function RootComponent() {
           {/* Scroll Progress Bar */}
           <div className="scroll-progress" style={{ width: "0%" }} id="scroll-progress" />
           <Header />
-          <main className="page-transition min-h-screen bg-white pt-16 pb-16 md:pb-0">
+          <main className="page-transition min-h-screen bg-[#0A0A0F] pt-16 pb-16 md:pb-0">
             <Outlet />
           </main>
           <Footer />
@@ -119,7 +119,7 @@ function RootDocument({ children }: { children: ReactNode }) {
               url: "https://scaleflow.ctonew.app",
               description: "ScaleFlow AI builds AI Digital Employees for service-based businesses — 24/7 lead qualification, automated booking, and workflow automation.",
               email: "contact@scaleflowai.co.uk",
-              telephone: "+44 121 234 5678",
+              telephone: "+44 7405 916374",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Birmingham",

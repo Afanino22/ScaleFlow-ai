@@ -135,7 +135,7 @@ function Services() {
       </section>
 
       {/* Service Cards */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: "#0A0A0F" }}>
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 md:gap-16">
             {services.map((s, i) => (
@@ -154,19 +154,19 @@ function Services() {
                   <div className="mb-4 flex items-center gap-3">
                     <span className="text-4xl">{s.icon}</span>
                     <div>
-                      <h2 className="text-2xl font-bold text-obsidian sm:text-3xl">
+                      <h2 className="text-2xl font-bold text-white sm:text-3xl">
                         {s.title}
                       </h2>
-                      <p className="text-sm text-gray-500">{s.subtitle}</p>
+                      <p className="text-sm text-gray-400">{s.subtitle}</p>
                     </div>
                   </div>
-                  <p className="mb-4 text-gray-600">{s.desc}</p>
-                  <div className="mb-6 rounded-lg border border-red-100 bg-red-50 p-4">
-                    <p className="text-sm font-semibold text-red-700">The Problem</p>
-                    <p className="mt-1 text-sm text-red-600">{s.problem}</p>
+                  <p className="mb-4 text-gray-400">{s.desc}</p>
+                  <div className="mb-6 rounded-lg border border-red-500/20 bg-red-500/[0.05] p-4">
+                    <p className="text-sm font-semibold text-red-400">The Problem</p>
+                    <p className="mt-1 text-sm text-red-400/80">{s.problem}</p>
                   </div>
                   <div className="mb-4">
-                    <p className="text-sm font-semibold text-gray-500">Implementation: <span className="text-obsidian">{s.implementation}</span></p>
+                    <p className="text-sm font-semibold text-gray-400">Implementation: <span className="text-white">{s.implementation}</span></p>
                   </div>
                   <Link to="/booking" className="btn-primary text-sm">
                     Get Started
@@ -177,11 +177,11 @@ function Services() {
                 </div>
 
                 {/* Features */}
-                <div className="flex-1 rounded-2xl border border-gray-100 bg-off-white p-8">
-                  <h3 className="mb-4 text-lg font-bold text-obsidian">What's included</h3>
+                <div className="flex-1 rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+                  <h3 className="mb-4 text-lg font-bold text-white">What's included</h3>
                   <ul className="space-y-3">
                     {s.features.map((f) => (
-                      <li key={f} className="flex items-start gap-3 text-sm text-gray-600">
+                      <li key={f} className="flex items-start gap-3 text-sm text-gray-400">
                         <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-teal" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>

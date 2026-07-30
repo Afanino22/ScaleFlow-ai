@@ -551,7 +551,7 @@ function Home() {
       {/* ════════════════════════════════════════════ */}
       {/* INTEGRATIONS */}
       {/* ════════════════════════════════════════════ */}
-      <section className="border-b border-gray-100 bg-white py-10">
+      <section className="border-b border-white/5 bg-[#0A0A0F] py-10">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
           <p className="mb-6 text-center text-sm font-semibold uppercase tracking-widest text-gray-400">
             Works with your existing tools
@@ -570,13 +570,13 @@ function Home() {
       {/* ════════════════════════════════════════════ */}
       {/* PROBLEM / AGITATION */}
       {/* ════════════════════════════════════════════ */}
-      <section className="bg-off-white section-padding">
+      <section className="bg-[#06060C] section-padding">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto mb-16 max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold text-obsidian sm:text-4xl">
+            <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl">
               The problem with <span className="gradient-text">leads, one by one</span>
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-400">
               Every missed call, slow email reply, and manual booking costs you revenue.
               Your team spends hours on admin when they could be serving clients.
             </p>
@@ -606,7 +606,7 @@ function Home() {
               <div key={item.title} className="service-card text-center">
                 <div className="mb-4 text-5xl font-black text-teal">{item.stat}</div>
                 <p className="text-sm font-semibold uppercase tracking-wider text-gray-400">{item.label}</p>
-                <h3 className="mb-3 mt-4 text-xl font-bold text-obsidian">{item.title}</h3>
+                <h3 className="mb-3 mt-4 text-xl font-bold text-white">{item.title}</h3>
                 <p className="text-gray-500">{item.desc}</p>
               </div>
             ))}
@@ -625,10 +625,10 @@ function Home() {
       <section className="section-padding">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto mb-16 max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold text-obsidian sm:text-4xl">
+            <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl">
               Meet your new <span className="gradient-text">Digital Employees</span>
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-400">
               A full suite of AI agents that handle the work your team shouldn't have to.
             </p>
           </div>
@@ -637,7 +637,7 @@ function Home() {
             {services.map((s) => (
               <Link key={s.title} to="/services" className="service-card group block">
                 <span className="mb-4 inline-block text-3xl">{s.icon}</span>
-                <h3 className="mb-2 text-xl font-bold text-obsidian group-hover:text-teal transition-colors">
+                <h3 className="mb-2 text-xl font-bold text-white group-hover:text-teal transition-colors">
                   {s.title}
                 </h3>
                 <p className="text-sm leading-relaxed text-gray-500">{s.desc}</p>
@@ -914,13 +914,13 @@ function Home() {
       {/* ════════════════════════════════════════════ */}
       {/* INDUSTRIES */}
       {/* ════════════════════════════════════════════ */}
-      <section className="bg-off-white section-padding">
+      <section className="bg-[#06060C] section-padding">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto mb-16 max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold text-obsidian sm:text-4xl">
+            <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl">
               Built for <span className="text-teal">service businesses</span>
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-400">
               Industry-specific intelligence that understands your world — from emergency
               dental triage to property viewing availability.
             </p>
@@ -936,7 +936,7 @@ function Home() {
                      ind.name === "Estate Agents" ? "🏠" : "🚗"}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-obsidian">{ind.name}</h3>
+                <h3 className="text-xl font-bold text-white">{ind.name}</h3>
                 <p className="mt-2 text-base font-semibold text-teal">{ind.stat}</p>
                 <p className="mt-1 text-sm text-gray-400">See how it works →</p>
               </Link>
@@ -951,10 +951,10 @@ function Home() {
       <section className="section-padding">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto mb-12 max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold text-obsidian sm:text-4xl">
+            <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl">
               Simple pricing. <span className="gradient-text">Real results.</span>
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-400">
               One setup fee, one monthly rate. No hidden costs.
             </p>
           </div>
@@ -964,7 +964,7 @@ function Home() {
               <Link key={tier.name} to="/pricing" className="service-card group block">
                 <p className="mb-1 text-sm font-bold uppercase tracking-wider text-teal">{tier.name}</p>
                 <p className="mb-4 text-xs text-gray-400">{tier.desc}</p>
-                <p className="text-2xl font-bold text-obsidian">{tier.setup}</p>
+                <p className="text-2xl font-bold text-white">{tier.setup}</p>
                 <p className="text-sm text-gray-500">setup + <strong className="text-teal">{tier.monthly}</strong></p>
                 <p className="mt-4 text-xs text-teal transition-all group-hover:translate-x-1">
                   See full plan →
@@ -981,14 +981,14 @@ function Home() {
         </div>
       </section>
 
-      <section className="section-padding relative overflow-hidden bg-off-white">
+      <section className="section-padding relative overflow-hidden bg-[#06060C]">
         <div className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-teal/5 blur-3xl" />
 
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="mb-6 text-3xl font-bold text-obsidian sm:text-4xl">
+          <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl">
             Ready to try your first <span className="gradient-text">Digital Employee</span>?
           </h2>
-          <p className="mb-10 text-lg text-gray-600">
+          <p className="mb-10 text-lg text-gray-400">
             Try the live demo above to see it in action — then pick a plan and go live within days.
             No calls. No commitment.
           </p>

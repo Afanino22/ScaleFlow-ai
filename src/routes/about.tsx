@@ -60,7 +60,7 @@ function About() {
       {/* Stats */}
       <section className="-mt-10 px-6 sm:px-8 lg:px-16">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 rounded-2xl bg-white p-8 shadow-xl sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 rounded-2xl bg-white/[0.02] p-8 shadow-xl sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-4xl font-black text-teal">{stat.value}</div>
@@ -76,10 +76,10 @@ function About() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-16 md:grid-cols-2">
             <div>
-              <h2 className="mb-6 text-3xl font-bold text-obsidian sm:text-4xl">
+              <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl">
                 Our <span className="gradient-text">Story</span>
               </h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
+              <div className="space-y-4 text-gray-400 leading-relaxed">
                 <p>
                   We saw the same pattern over and over: brilliant dentists, lawyers, estate
                   agents, and dealers spending hours on admin that a well-designed AI could
@@ -92,20 +92,20 @@ function About() {
                   the core problem.
                 </p>
                 <p>
-                  So we built something different: <strong className="text-obsidian">Digital Employees</strong>.
+                  So we built something different: <strong className="text-white">Digital Employees</strong>.
                   Not tools. Not dashboards. AI agents that do the work, integrated into your
                   actual workflow, that deliver measurable ROI from day one.
                 </p>
               </div>
             </div>
-            <div className="rounded-2xl bg-off-white p-8">
-              <h3 className="mb-6 text-xl font-bold text-obsidian">Our Values</h3>
+            <div className="rounded-2xl bg-white/[0.03] p-8">
+              <h3 className="mb-6 text-xl font-bold text-white">Our Values</h3>
               <div className="space-y-6">
                 {values.map((v) => (
                   <div key={v.title} className="flex gap-4">
                     <span className="mt-1 text-2xl">{v.icon}</span>
                     <div>
-                      <h4 className="font-bold text-obsidian">{v.title}</h4>
+                      <h4 className="font-bold text-white">{v.title}</h4>
                       <p className="mt-1 text-sm text-gray-500">{v.desc}</p>
                     </div>
                   </div>
@@ -117,9 +117,9 @@ function About() {
       </section>
 
       {/* Industries */}
-      <section className="bg-off-white section-padding">
+      <section className="bg-white/[0.03] section-padding">
         <div className="mx-auto max-w-7xl text-center">
-          <h2 className="mb-4 text-3xl font-bold text-obsidian sm:text-4xl">
+          <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
             Who we <span className="gradient-text">serve</span>
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-gray-500">
@@ -133,9 +133,9 @@ function About() {
               { name: "Estate Agents", emoji: "🏠" },
               { name: "Car Dealerships", emoji: "🚗" },
             ].map((ind) => (
-              <div key={ind.name} className="rounded-2xl border border-gray-200 bg-white p-6 transition-all hover:border-teal">
+              <div key={ind.name} className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all hover:border-teal">
                 <span className="text-4xl">{ind.emoji}</span>
-                <h3 className="mt-4 font-bold text-obsidian">{ind.name}</h3>
+                <h3 className="mt-4 font-bold text-white">{ind.name}</h3>
               </div>
             ))}
           </div>
@@ -145,7 +145,7 @@ function About() {
       {/* CTA */}
       <section className="section-padding text-center">
         <div className="mx-auto max-w-2xl">
-          <h2 className="mb-4 text-2xl font-bold text-obsidian sm:text-3xl">
+          <h2 className="mb-4 text-2xl font-bold text-white sm:text-3xl">
             Want to work with us?
           </h2>
           <p className="mb-8 text-gray-500">

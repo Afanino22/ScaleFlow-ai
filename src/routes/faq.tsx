@@ -95,18 +95,18 @@ function FAQ() {
       </section>
 
       {/* FAQ Content */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: "#0A0A0F" }}>
         <div className="mx-auto max-w-4xl">
           {faqs.map((group) => (
             <div key={group.category} className="mb-16 last:mb-0">
-              <h2 className="mb-8 text-2xl font-bold text-obsidian">{group.category}</h2>
+              <h2 className="mb-8 text-2xl font-bold text-white">{group.category}</h2>
               <div className="space-y-4">
                 {group.items.map((item) => (
                   <details
                     key={item.q}
-                    className="group rounded-xl border border-gray-200 bg-white transition-all hover:border-gray-300"
+                    className="group rounded-xl border border-white/10 bg-white/[0.02] transition-all hover:border-white/20"
                   >
-                    <summary className="flex cursor-pointer list-none items-center justify-between p-6 font-semibold text-obsidian transition-colors hover:text-teal">
+                    <summary className="flex cursor-pointer list-none items-center justify-between p-6 font-semibold text-white transition-colors hover:text-teal">
                       {item.q}
                       <svg
                         className="h-5 w-5 flex-shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-45"
@@ -117,7 +117,7 @@ function FAQ() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                       </svg>
                     </summary>
-                    <p className="border-t border-gray-100 px-6 py-5 text-sm leading-relaxed text-gray-500">
+                    <p className="border-t border-white/5 px-6 py-5 text-sm leading-relaxed text-gray-400">
                       {item.a}
                     </p>
                   </details>
@@ -129,12 +129,12 @@ function FAQ() {
       </section>
 
       {/* Contact CTA */}
-      <section className="bg-off-white section-padding text-center">
+      <section className="section-padding text-center" style={{ background: "#06060C" }}>
         <div className="mx-auto max-w-2xl">
-          <h2 className="mb-4 text-2xl font-bold text-obsidian sm:text-3xl">
+          <h2 className="mb-4 text-2xl font-bold text-white sm:text-3xl">
             Can't find what you're looking for?
           </h2>
-          <p className="mb-8 text-gray-500">
+          <p className="mb-8 text-gray-400">
             Reach out and we'll get back to you within 24 hours.
           </p>
           <a href="mailto:afanosman261@gmail.com" className="btn-primary">

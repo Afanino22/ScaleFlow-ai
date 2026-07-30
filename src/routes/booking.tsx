@@ -41,7 +41,6 @@ function Booking() {
       // Network error — fallback to mailto below
     }
 
-    // Fallback: open email client with data pre-filled
     const body = [
       `=== Free Trial Signup ===`,
       ``,
@@ -97,53 +96,37 @@ function Booking() {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: "#0A0A0F" }}>
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-16 lg:grid-cols-5">
             {/* Left Info */}
             <div className="lg:col-span-2">
               {!sent && (
                 <>
-                  <h2 className="mb-6 text-2xl font-bold text-obsidian">How the free trial works</h2>
+                  <h2 className="mb-6 text-2xl font-bold text-white">How the free trial works</h2>
 
                   <div className="space-y-6">
                     {[
-                      {
-                        step: "01",
-                        title: "Tell us about your business",
-                        desc: "Fill in the form. Takes 1 minute. No call needed.",
-                      },
-                      {
-                        step: "02",
-                        title: "We build your demo",
-                        desc: "We customise a Digital Employee for your industry and needs.",
-                      },
-                      {
-                        step: "03",
-                        title: "We send you access",
-                        desc: "You get a link to your live demo environment — try it out, share it with your team.",
-                      },
-                      {
-                        step: "04",
-                        title: "Love it? Upgrade or buy",
-                        desc: "If it works for you, choose a plan and go live. No pressure.",
-                      },
+                      { step: "01", title: "Tell us about your business", desc: "Fill in the form. Takes 1 minute. No call needed." },
+                      { step: "02", title: "We build your demo", desc: "We customise a Digital Employee for your industry and needs." },
+                      { step: "03", title: "We send you access", desc: "You get a link to your live demo environment — try it out, share it with your team." },
+                      { step: "04", title: "Love it? Upgrade or buy", desc: "If it works for you, choose a plan and go live. No pressure." },
                     ].map((item) => (
                       <div key={item.step} className="flex gap-4">
                         <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-teal/10 text-sm font-bold text-teal">
                           {item.step}
                         </span>
                         <div>
-                          <h3 className="font-semibold text-obsidian">{item.title}</h3>
-                          <p className="mt-1 text-sm text-gray-500">{item.desc}</p>
+                          <h3 className="font-semibold text-white">{item.title}</h3>
+                          <p className="mt-1 text-sm text-gray-400">{item.desc}</p>
                         </div>
                       </div>
                     ))}
                   </div>
 
-                  <div className="mt-10 rounded-2xl border border-teal/20 bg-teal/5 p-6">
-                    <h3 className="font-bold text-obsidian">Already know what you want?</h3>
-                    <p className="mt-2 text-sm text-gray-500">
+                  <div className="mt-10 rounded-2xl border border-teal/20 bg-teal/[0.04] p-6">
+                    <h3 className="font-bold text-white">Already know what you want?</h3>
+                    <p className="mt-2 text-sm text-gray-400">
                       Browse our plans on the{" "}
                       <Link to="/pricing" className="font-semibold text-teal underline">
                         pricing page
@@ -158,38 +141,34 @@ function Booking() {
             {/* Right: Trial Form */}
             <div className="lg:col-span-3">
               {!sent && (
-                <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
-                  <h2 className="mb-6 text-xl font-bold text-obsidian">Start your free trial</h2>
+                <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8">
+                  <h2 className="mb-6 text-xl font-bold text-white">Start your free trial</h2>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid gap-6 sm:grid-cols-2">
                       <div>
-                        <label htmlFor="t-name" className="mb-2 block text-sm font-medium text-gray-700">
-                          Full Name *
-                        </label>
-                        <input type="text" name="t-name" id="t-name" required placeholder="Jane Smith" className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm outline-none transition-colors focus:border-teal focus:ring-2 focus:ring-teal/20" />
+                        <label htmlFor="t-name" className="mb-2 block text-sm font-medium text-gray-400">Full Name *</label>
+                        <input type="text" name="t-name" id="t-name" required placeholder="Jane Smith" className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-gray-500 outline-none transition-colors focus:border-teal/50 focus:bg-white/[0.06]" />
                       </div>
                       <div>
-                        <label htmlFor="t-email" className="mb-2 block text-sm font-medium text-gray-700">
-                          Email Address *
-                        </label>
-                        <input type="email" name="t-email" id="t-email" required placeholder="jane@example.com" className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm outline-none transition-colors focus:border-teal focus:ring-2 focus:ring-teal/20" />
+                        <label htmlFor="t-email" className="mb-2 block text-sm font-medium text-gray-400">Email Address *</label>
+                        <input type="email" name="t-email" id="t-email" required placeholder="jane@example.com" className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-gray-500 outline-none transition-colors focus:border-teal/50 focus:bg-white/[0.06]" />
                       </div>
                     </div>
                     <div className="grid gap-6 sm:grid-cols-2">
                       <div>
-                        <label htmlFor="t-phone" className="mb-2 block text-sm font-medium text-gray-700">Phone Number</label>
-                        <input type="tel" name="t-phone" id="t-phone" placeholder="+44 7700 900000" className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm outline-none transition-colors focus:border-teal focus:ring-2 focus:ring-teal/20" />
+                        <label htmlFor="t-phone" className="mb-2 block text-sm font-medium text-gray-400">Phone Number</label>
+                        <input type="tel" name="t-phone" id="t-phone" placeholder="+44 7700 900000" className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-gray-500 outline-none transition-colors focus:border-teal/50 focus:bg-white/[0.06]" />
                       </div>
                       <div>
-                        <label htmlFor="t-company" className="mb-2 block text-sm font-medium text-gray-700">Business Name *</label>
-                        <input type="text" name="t-company" id="t-company" required placeholder="Smith Dental Clinic" className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm outline-none transition-colors focus:border-teal focus:ring-2 focus:ring-teal/20" />
+                        <label htmlFor="t-company" className="mb-2 block text-sm font-medium text-gray-400">Business Name *</label>
+                        <input type="text" name="t-company" id="t-company" required placeholder="Smith Dental Clinic" className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-gray-500 outline-none transition-colors focus:border-teal/50 focus:bg-white/[0.06]" />
                       </div>
                     </div>
                     <div className="grid gap-6 sm:grid-cols-2">
                       <div>
-                        <label htmlFor="t-industry" className="mb-2 block text-sm font-medium text-gray-700">Industry *</label>
-                        <select name="t-industry" id="t-industry" required className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm outline-none transition-colors focus:border-teal focus:ring-2 focus:ring-teal/20">
+                        <label htmlFor="t-industry" className="mb-2 block text-sm font-medium text-gray-400">Industry *</label>
+                        <select name="t-industry" id="t-industry" required className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white outline-none transition-colors focus:border-teal/50 focus:bg-white/[0.06]">
                           <option value="">Select industry</option>
                           <option value="dental">Dental Clinic</option>
                           <option value="legal">Law Firm</option>
@@ -201,8 +180,8 @@ function Booking() {
                         </select>
                       </div>
                       <div>
-                        <label htmlFor="t-size" className="mb-2 block text-sm font-medium text-gray-700">Team Size *</label>
-                        <select name="t-size" id="t-size" required className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm outline-none transition-colors focus:border-teal focus:ring-2 focus:ring-teal/20">
+                        <label htmlFor="t-size" className="mb-2 block text-sm font-medium text-gray-400">Team Size *</label>
+                        <select name="t-size" id="t-size" required className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white outline-none transition-colors focus:border-teal/50 focus:bg-white/[0.06]">
                           <option value="">Select size</option>
                           <option value="1-5">1–5 employees</option>
                           <option value="5-15">5–15 employees</option>
@@ -217,7 +196,7 @@ function Booking() {
                     </button>
                   </form>
 
-                  <p className="mt-4 text-center text-xs text-gray-400">
+                  <p className="mt-4 text-center text-xs text-gray-500">
                     By submitting, you agree to our{" "}<Link to="/privacy" className="underline">Privacy Policy</Link>. No spam, no calls unless you ask for one.
                   </p>
                 </div>
@@ -228,12 +207,12 @@ function Booking() {
       </section>
 
       {/* Trust */}
-      <section className="bg-off-white section-padding text-center">
+      <section className="section-padding text-center" style={{ background: "#06060C" }}>
         <div className="mx-auto max-w-3xl">
-          <h2 className="mb-6 text-2xl font-bold text-obsidian sm:text-3xl">
+          <h2 className="mb-6 text-2xl font-bold text-white sm:text-3xl">
             Still have questions?
           </h2>
-          <p className="mb-8 text-gray-500">
+          <p className="mb-8 text-gray-400">
             Check out our FAQ or chat with the demo assistant on this page.
           </p>
           <Link to="/faq" className="btn-secondary">
