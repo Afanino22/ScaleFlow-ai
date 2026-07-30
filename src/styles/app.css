@@ -851,8 +851,8 @@
 }
 .demo-chat-body {
   padding: 16px;
-  min-height: 240px;
-  max-height: 360px;
+  min-height: 360px;
+  max-height: 420px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
