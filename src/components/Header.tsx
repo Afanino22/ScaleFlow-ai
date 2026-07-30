@@ -45,10 +45,10 @@ export default function Header() {
 
         {/* Desktop CTA */}
         <Link
-          to="/demo"
+          to="/booking"
           className="btn-primary hidden text-sm md:inline-flex"
         >
-          Book Demo
+          Free Trial
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
@@ -95,11 +95,11 @@ export default function Header() {
             ))}
             <div className="mt-4 border-t border-white/10 pt-4">
               <Link
-                to="/demo"
+                to="/booking"
                 onClick={() => setMenuOpen(false)}
                 className="btn-primary w-full justify-center text-sm"
               >
-                Book Demo
+                Free Trial
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

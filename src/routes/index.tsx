@@ -258,31 +258,26 @@ function Home() {
           {/* ── Left: Text ── */}
           <div className="text-center lg:text-left z-10">
             <span className="hero-badge animate-fade-in-up inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
-              🚀 Introducing Digital Employees
+              🚀 AI Receptionist for Service Businesses
             </span>
 
             <h1 className="animate-fade-in-up delay-100 mt-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Your AI Workforce.{" "}
-              <span className="gradient-text">Working 24/7 So You Don't Have To.</span>
+              Never miss a lead again.{" "}
+              <span className="gradient-text">Your AI answers 24/7.</span>
             </h1>
 
             <p className="animate-fade-in-up delay-200 mt-6 max-w-xl text-lg leading-relaxed text-gray-400 sm:text-xl">
-              ScaleFlow AI deploys intelligent AI receptionists, voice agents, and automated workflows that answer enquiries, qualify leads, book appointments, and handle repetitive tasks around the clock.
+              An AI agent on your website that answers every enquiry instantly, qualifies leads,
+              and books appointments into your calendar — while you sleep.
             </p>
 
             <div className="animate-fade-in-up delay-300 mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
-              <Link to="/demo" className="btn-primary-lg animate-pulse-glow">
-                Book a Demo →
+              <Link to="/booking" className="btn-primary-lg animate-pulse-glow">
+                Start Free Trial — No Calls →
               </Link>
-              <Link to="/demo" className="btn-outline text-base">
-                ▶ Watch Live Demo
-              </Link>
-            </div>
-
-            <div className="animate-fade-in-up delay-400 mt-4">
-              <Link to="/booking" className="inline-flex items-center gap-2 rounded-full border border-teal/20 bg-teal/5 px-5 py-2 text-sm font-medium text-teal transition-all hover:bg-teal/10">
-                🎯 Start your 7-day free trial — no call needed
-              </Link>
+              <a href="#how-it-works" className="btn-outline text-base">
+                See How It Works ↓
+              </a>
             </div>
           </div>
 
@@ -424,41 +419,35 @@ function Home() {
       <section className="bg-[#06060C] section-padding">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto mb-16 max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl">
-              The problem with <span className="gradient-text">leads, one by one</span>
+            <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
+              Your competitors reply in seconds.{" "}
+              <span className="gradient-text">You reply tomorrow.</span>
             </h2>
-            <p className="text-lg text-gray-400">
-              Every missed call, slow email reply, and manual booking costs you revenue.
-              Your team spends hours on admin when they could be serving clients.
-            </p>
+            <p className="text-lg text-gray-400">Guess who gets the business.</p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
             {[
               {
-                title: "Missed Opportunities",
-                desc: "60% of leads never get a response. After-hours enquiries vanish.",
-                stat: "£50k+",
-                label: "lost annually",
+                icon: "🌙",
+                title: "The 8 PM Problem",
+                desc: "A potential client emails at 8 PM. By 9 AM the next morning, they've already booked with someone who answered at 8:02 PM. Your AI answers at 8:02 PM.",
               },
               {
-                title: "Wasted Hours",
-                desc: "Staff spend 15–25 hours/week on repetitive admin and data entry.",
-                stat: "20 hrs",
-                label: "per week per person",
+                icon: "📞",
+                title: "The Voicemail Black Hole",
+                desc: "Someone calls during your busiest hour. It goes to voicemail. They don't leave a message. They call your competitor instead. Your AI picks up every call.",
               },
               {
-                title: "Slow Response",
-                desc: "Average SMB takes 12+ hours to reply. Speed-to-lead = revenue.",
-                stat: "12 hrs",
-                label: "average response time",
+                icon: "📋",
+                title: "The Admin Tax",
+                desc: "Your best people spend hours on repetitive questions, manual booking, and data entry — instead of serving clients. Your AI handles all of it.",
               },
             ].map((item) => (
-              <div key={item.title} className="service-card text-center">
-                <div className="mb-4 text-5xl font-black text-teal">{item.stat}</div>
-                <p className="text-sm font-semibold uppercase tracking-wider text-gray-400">{item.label}</p>
-                <h3 className="mb-3 mt-4 text-xl font-bold text-white">{item.title}</h3>
-                <p className="text-gray-500">{item.desc}</p>
+              <div key={item.title} className="service-card text-left p-8">
+                <div className="mb-4 text-3xl">{item.icon}</div>
+                <h3 className="mb-3 text-xl font-bold text-white">{item.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -617,7 +606,7 @@ function Home() {
       {/* ════════════════════════════════════════════ */}
       {/* WORKFLOW TIMELINE */}
       {/* ════════════════════════════════════════════ */}
-      <section className="timeline-section section-padding">
+      <section id="how-it-works" className="timeline-section section-padding">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto mb-12 max-w-3xl text-center">
             <span className="inline-block rounded-full border border-teal/20 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal mb-4">

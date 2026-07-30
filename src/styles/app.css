@@ -1180,7 +1180,7 @@
 .skeleton-input { height: 44px; border-radius: 12px; }
 .skeleton-btn { height: 44px; border-radius: 8px; }
 
-/* ════���════════════════════════════════════════════════���════════
+/* ════���════════════════════════════════════════════════�����════════
    Page Transition Fade
    ══════════════════════════════════════════════════════════════ */
 @keyframes page-in {
@@ -1208,6 +1208,25 @@
   outline: 2px solid var(--color-teal);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Skip to content — accessibility */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 12px 20px;
+  background: var(--color-teal);
+  color: #0A0A0F;
+  font-weight: 700;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-to-content:focus {
+  top: 16px;
 }
 
 /* ══════════════════════════════════════════════════════════════

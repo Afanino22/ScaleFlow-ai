@@ -210,15 +210,16 @@ function Industries() {
         <div className="ai-hero-glow ai-hero-glow-2 parallax-slow" />
 
         <div className="section-padding relative mx-auto w-full max-w-7xl pt-28 pb-16 text-center md:pt-32 md:pb-20">
-          <span className="mb-4 inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
+          <span className="hero-badge animate-fade-in-up inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
             Industries We Serve
           </span>
-          <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-            AI-powered <span className="gradient-text">service businesses</span>
+          <h1 className="animate-fade-in-up delay-100 mt-6 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+            We speak your industry.{" "}
+            <span className="gradient-text">Literally.</span>
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-gray-400 sm:text-xl">
-            From dental clinics to construction firms — our Digital Employees are trained on your industry's
-            language, workflows, and customer expectations. No generic chatbots. Just results.
+          <p className="animate-fade-in-up delay-200 mx-auto mt-6 max-w-2xl text-lg text-gray-400 sm:text-xl">
+            A dental receptionist asks different questions than a law firm intake coordinator.
+            Our AI is trained on your specific industry — so it sounds like it belongs on your team.
           </p>
         </div>
       </section>

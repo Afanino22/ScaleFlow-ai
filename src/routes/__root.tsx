@@ -75,10 +75,14 @@ export const Route = createRootRoute({
 function RootComponent() {
       return (
         <RootDocument>
+          {/* Skip to content — accessibility */}
+          <a href="#main-content" className="skip-to-content">
+            Skip to content
+          </a>
           {/* Scroll Progress Bar */}
           <div className="scroll-progress" style={{ width: "0%" }} id="scroll-progress" />
           <Header />
-          <main className="page-transition min-h-screen bg-[#0A0A0F] pt-16 pb-16 md:pb-0">
+          <main id="main-content" className="page-transition min-h-screen bg-[#0A0A0F] pt-16 pb-16 md:pb-0">
             <Outlet />
           </main>
           <Footer />

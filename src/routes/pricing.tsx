@@ -175,17 +175,23 @@ function Pricing() {
                     {tier.setup} setup fee
                   </div>
                   <div className="mt-4">
-                    <a
-                      href={tier.buyUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      to="/booking"
                       className={`inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition-all ${
                         tier.popular
                           ? 'bg-teal text-[#0A0A0F] hover:bg-teal/90'
                           : 'border border-white/10 text-white hover:border-teal/30 hover:bg-teal/5'
                       }`}
                     >
-                      Choose {tier.name} →
+                      Start Free Trial →
+                    </Link>
+                    <a
+                      href={tier.buyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-gray-500 hover:text-teal text-xs text-center mt-2"
+                    >
+                      Or pay setup fee now — {tier.setup}
                     </a>
                   </div>
                 </div>

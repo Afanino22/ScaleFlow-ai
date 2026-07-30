@@ -12,7 +12,8 @@ const services = [
     subtitle: "AI Web & SMS Chat Agent",
     tier: "Starter • Growth • Enterprise",
     desc: "A 24/7 intelligent chat widget for your website + SMS channel that answers FAQs, qualifies leads, and books appointments directly into your calendar.",
-    problem: "Slow lead response times. Missed after-hours enquiries. Front-desk staff overwhelmed juggling channels.",
+    problem: "Someone fills your contact form at 9 PM. No one sees it until 9 AM. By then, they've already called your competitor.",
+    cta: "Put a Chat Agent on My Site →",
     features: [
       "Website chat widget with your branding",
       "SMS channel for mobile leads",
@@ -30,7 +31,8 @@ const services = [
     subtitle: "AI Voice Receptionist",
     tier: "Enterprise",
     desc: "Natural-sounding AI voice agent that answers inbound calls 24/7 — qualifies leads, answers questions, and books appointments. Transfers to a human when needed.",
-    problem: "Calls go to voicemail after hours. Voicemail often goes unchecked. Every missed call is lost revenue.",
+    problem: "A potential client calls during lunch. It rings out. They don't leave a message. You never know they called. That's a client you just lost.",
+    cta: "I Want Voice AI →",
     features: [
       "Natural conversation with custom persona",
       "Real-time speech recognition & synthesis",
@@ -48,7 +50,8 @@ const services = [
     subtitle: "Intelligent Lead Scoring Engine",
     tier: "Growth • Enterprise",
     desc: "An AI pipeline that scores every lead on readiness, budget fit, and urgency. Hot leads get instant responses; cold leads get automated nurture sequences.",
-    problem: "Staff spend hours on unqualified leads that don't convert. Team morale drops when effort doesn't convert.",
+    problem: "Your best salesperson spends Tuesday morning chasing a lead who was 'just browsing.' Meanwhile, a ready-to-buy client goes to voicemail.",
+    cta: "Qualify My Leads Automatically →",
     features: [
       "Multi-source lead capture (web, email, chat, phone)",
       "AI-driven scoring & classification",
@@ -66,7 +69,8 @@ const services = [
     subtitle: "Automated Booking & Scheduling",
     tier: "Starter • Growth • Enterprise",
     desc: "Smart scheduling that syncs with your calendar, shows real-time availability, books appointments, and sends automated reminders that slash no-shows by 70%.",
-    problem: "Manual booking creates phone tag, double-bookings, and costly no-shows cutting into revenue.",
+    problem: "Five emails. Three phone calls. Two voicemails. All to book one appointment. And they still don't show up.",
+    cta: "Stop the No-Shows →",
     features: [
       "Real-time calendar sync (Google, Outlook)",
       "Custom service types & duration rules",
@@ -84,7 +88,8 @@ const services = [
     subtitle: "AI Email Response Agent",
     tier: "Growth • Enterprise",
     desc: "Connects to your inbox, analyses incoming emails, drafts intelligent responses, and logs interactions to your CRM. Human reviews sensitive replies first.",
-    problem: "Professionals spend hours each day on repetitive emails. This blocks billable work and causes slow response.",
+    problem: "You spend the first hour of every day answering 'What are your fees?' and 'Do you have availability?' — instead of doing billable work.",
+    cta: "Clear My Inbox →",
     features: [
       "Gmail & Outlook integration",
       "AI email classification & prioritisation",
@@ -103,6 +108,7 @@ const services = [
     tier: "Add-on for any tier",
     desc: "Connects all your tools into unified automated workflows. New form submission → CRM contact → calendar check → welcome email — all in seconds.",
     problem: "4–8 disconnected tools. Staff manually copy data between them. Leads fall through cracks. Reporting is impossible.",
+    cta: "Connect My Tools →",
     features: [
       "Tool audit & workflow mapping",
       "1000+ app connectors via Make.com / n8n",
@@ -130,15 +136,15 @@ function Services() {
 
         <div className="section-padding relative mx-auto w-full max-w-7xl pt-28 pb-20 text-center md:pt-32 md:pb-28 z-10">
           <span className="hero-badge animate-fade-in-up inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
-            ⚡ Our Services
+            ⚡ AI That Does the Work
           </span>
           <h1 className="animate-fade-in-up delay-100 mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-            Meet the{" "}
-            <span className="gradient-text">Digital Employee</span> suite
+            Every repetitive task your team does —{" "}
+            <span className="gradient-text">we automate it.</span>
           </h1>
           <p className="animate-fade-in-up delay-200 mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
-            Six AI services designed to cover every aspect of your lead and admin workflow.
-            Mix and match to build your perfect automated office.
+            Smart Chat. Voice Agent. Email AI. Lead Qualification. Automated Scheduling.
+            Workflow Sync. Pick what slows you down and we'll handle it.
           </p>
 
           {/* Service constellation grid */}
@@ -189,7 +195,7 @@ function Services() {
                     <p className="text-sm font-semibold text-gray-400">Implementation: <span className="text-white">{s.implementation}</span></p>
                   </div>
                   <Link to="/booking" className="btn-primary text-sm">
-                    Get Started
+                    {s.cta}
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
