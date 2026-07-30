@@ -5,6 +5,7 @@ const navLinks = [
   { to: "/", label: "Home" },
   { to: "/demo", label: "Live Demo" },
   { to: "/services", label: "Services" },
+  { to: "/industries", label: "Industries" },
   { to: "/pricing", label: "Pricing" },
   { to: "/roi", label: "ROI Calculator" },
   { to: "/about", label: "About" },
