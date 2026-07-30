@@ -89,95 +89,188 @@ function Home() {
   return (
     <>
       {/* ════════════════════════════════════════════ */}
-      {/* HERO */}
+      {/* HERO — AI Command Center */}
       {/* ════════════════════════════════════════════ */}
-      <section className="hero-gradient relative overflow-hidden min-h-[90vh] flex items-center">
+      <section className="ai-hero">
+        {/* Grid background */}
+        <div className="ai-hero-grid" />
+
         {/* Floating particles */}
-        <div className="particle particle-1" />
-        <div className="particle particle-2" />
-        <div className="particle particle-3" />
+        <div className="hero-particle hero-particle-1" />
+        <div className="hero-particle hero-particle-2" />
+        <div className="hero-particle hero-particle-3" />
+        <div className="hero-particle hero-particle-4" />
+        <div className="hero-particle hero-particle-5" />
 
-        {/* Background glow */}
-        <div className="pointer-events-none absolute -top-40 -right-40 h-96 w-96 rounded-full bg-teal/5 blur-3xl animate-float" />
-        <div className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-slate-blue/5 blur-3xl animate-float" style={{ animationDelay: '-1.5s' }} />
+        {/* Glow orbs */}
+        <div className="ai-hero-glow ai-hero-glow-1" />
+        <div className="ai-hero-glow ai-hero-glow-2" />
+        <div className="ai-hero-glow ai-hero-glow-3" />
 
-        <div className="section-padding relative mx-auto grid w-full max-w-7xl items-center gap-12 pt-28 pb-20 md:grid-cols-2 md:pt-32 md:pb-28">
-          {/* Left: Text */}
-          <div className="text-center md:text-left">
+        <div className="section-padding relative mx-auto grid w-full max-w-7xl items-center gap-12 pt-28 pb-20 lg:grid-cols-2 md:pt-32 md:pb-28">
+          {/* ── Left: Text ── */}
+          <div className="text-center lg:text-left z-10">
             <span className="hero-badge animate-fade-in-up inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
               🚀 Introducing Digital Employees
             </span>
 
-            <h1 className="animate-fade-in-up delay-100 mt-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                            Your business never sleeps. <span className="gradient-text">Now your front desk doesn't either.</span>
-                          </h1>
+            <h1 className="animate-fade-in-up delay-100 mt-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Your AI Workforce.{" "}
+              <span className="gradient-text">Working 24/7 So You Don't Have To.</span>
+            </h1>
 
-            <p className="animate-fade-in-up delay-200 mt-6 max-w-xl text-lg leading-relaxed text-gray-300 sm:text-xl">
-              ScaleFlow builds a <strong className="text-white">cloud-based AI agent</strong> for your business. It lives on your website, answers every lead 24/7, books appointments into your calendar, and connects to your CRM — <strong className="text-white">no software to install.</strong>
+            <p className="animate-fade-in-up delay-200 mt-6 max-w-xl text-lg leading-relaxed text-gray-400 sm:text-xl">
+              ScaleFlow AI deploys intelligent AI receptionists, voice agents, and automated workflows that answer enquiries, qualify leads, book appointments, and handle repetitive tasks around the clock.
             </p>
 
-            <div className="animate-fade-in-up delay-300 mt-8 flex flex-col items-center gap-4 sm:flex-row md:justify-start">
+            <div className="animate-fade-in-up delay-300 mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
               <Link to="/demo" className="btn-primary-lg animate-pulse-glow">
-                Try Live Demo →
+                Book a Demo →
               </Link>
-              <Link to="/pricing" className="btn-outline text-base">
-                See Pricing
+              <Link to="/demo" className="btn-outline text-base">
+                ▶ Watch Live Demo
               </Link>
             </div>
 
-            {/* Free trial badge */}
             <div className="animate-fade-in-up delay-400 mt-4">
               <Link to="/booking" className="inline-flex items-center gap-2 rounded-full border border-teal/20 bg-teal/5 px-5 py-2 text-sm font-medium text-teal transition-all hover:bg-teal/10">
                 🎯 Start your 7-day free trial — no call needed
               </Link>
             </div>
+          </div>
 
-            {/* Trust badges */}
-            <div className="animate-fade-in-up delay-400 mt-8 flex flex-wrap items-center justify-center gap-8 md:justify-start">
-              <div className="flex items-center gap-2 text-base text-gray-500">
-                <svg className="h-4 w-4 text-teal" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75z" clipRule="evenodd" />
-                </svg>
-                <span>Birmingham-built</span>
+          {/* ── Right: AI Command Center ── */}
+          <div className="animate-fade-in-up delay-200 flex justify-center lg:justify-end">
+            <div className="command-center-container relative w-[520px] h-[520px]">
+              {/* Connection lines SVG */}
+              <svg className="command-center-svg" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
+                <line x1="260" y1="260" x2="420" y2="260" stroke="rgba(0,245,212,0.15)" strokeWidth="1" />
+                <line x1="260" y1="260" x2="340" y2="399" stroke="rgba(67,97,238,0.12)" strokeWidth="1" />
+                <line x1="260" y1="260" x2="180" y2="399" stroke="rgba(139,92,246,0.12)" strokeWidth="1" />
+                <line x1="260" y1="260" x2="100" y2="260" stroke="rgba(0,245,212,0.15)" strokeWidth="1" />
+                <line x1="260" y1="260" x2="180" y2="121" stroke="rgba(67,97,238,0.12)" strokeWidth="1" />
+                <line x1="260" y1="260" x2="340" y2="121" stroke="rgba(139,92,246,0.12)" strokeWidth="1" />
+                <circle cx="260" cy="260" r="170" fill="none" stroke="rgba(0,245,212,0.04)" strokeWidth="1" strokeDasharray="2 8" />
+                <circle cx="260" cy="260" r="240" fill="none" stroke="rgba(67,97,238,0.03)" strokeWidth="1" strokeDasharray="1 10" />
+              </svg>
+
+              {/* Orbital rings */}
+              <div className="ai-ring ai-ring-1" />
+              <div className="ai-ring ai-ring-2" />
+              <div className="ai-ring ai-ring-3" />
+
+              {/* AI Core */}
+              <div className="ai-core">
+                <div className="ai-core-inner" />
               </div>
-              <div className="flex items-center gap-2 text-base text-gray-500">
-                <svg className="h-4 w-4 text-teal" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span>Zero setup fees for pilot clients</span>
+
+              {/* 1. Voice Agent — Right */}
+              <div className="agent-card agent-card-float-1" style={{ top: 'calc(50% - 36px)', left: 'calc(50% + 95px)' }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-sm">📞</span>
+                  <span className="text-xs font-semibold text-white">Voice Agent</span>
+                  <span className="activity-dot ml-auto" />
+                </div>
+                <p className="text-[11px] text-gray-400">Live calls: <span className="text-teal font-medium">3 active</span></p>
+                <div className="mt-1.5 flex gap-0.5 items-end h-4">
+                  {[2,4,3,5,2,6,4,3].map((h, i) => (
+                    <div key={i} className="w-[3px] bg-teal/60 rounded-sm" style={{ height: `${h * 2}px`, animation: `card-float-${(i%3)+1} 0.6s ease-in-out infinite`, animationDelay: `${i * 0.1}s` }} />
+                  ))}
+                </div>
+              </div>
+
+              {/* 2. Chat Agent — Bottom Right */}
+              <div className="agent-card agent-card-float-2" style={{ top: 'calc(50% + 103px)', left: 'calc(50% + 15px)' }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-sm">💬</span>
+                  <span className="text-xs font-semibold text-white">Chat Agent</span>
+                  <span className="activity-dot ml-auto" />
+                </div>
+                <p className="text-[11px] text-gray-400">Active: <span className="text-teal font-medium">12 conversations</span></p>
+                <div className="mt-1.5 flex gap-0.5">
+                  {[0,1,2].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-teal/40" style={{ animation: `activity-blink ${1.2 + i*0.3}s ease-in-out infinite` }} />)}
+                </div>
+              </div>
+
+              {/* 3. Booking Agent — Bottom Left */}
+              <div className="agent-card agent-card-float-3" style={{ top: 'calc(50% + 103px)', left: 'calc(50% - 145px)' }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-sm">📅</span>
+                  <span className="text-xs font-semibold text-white">Booking Agent</span>
+                  <span className="activity-dot ml-auto" />
+                </div>
+                <p className="text-[11px] text-gray-400">Today: <span className="text-teal font-medium">8 appointments</span></p>
+                <div className="mt-1.5 text-[10px] text-gray-500">
+                  <span className="text-teal">●</span> Next: 2:30 PM
+                </div>
+              </div>
+
+              {/* 4. Email Agent — Left */}
+              <div className="agent-card agent-card-float-4" style={{ top: 'calc(50% - 36px)', left: 'calc(50% - 225px)' }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-sm">📧</span>
+                  <span className="text-xs font-semibold text-white">Email Agent</span>
+                  <span className="activity-dot ml-auto" />
+                </div>
+                <p className="text-[11px] text-gray-400">Processed: <span className="text-teal font-medium">47 emails</span></p>
+                <div className="mt-1.5 text-[10px] text-gray-500">
+                  <span className="text-teal">↗</span> 3 awaiting reply
+                </div>
+              </div>
+
+              {/* 5. Sales Agent — Top Left */}
+              <div className="agent-card agent-card-float-5" style={{ top: 'calc(50% - 175px)', left: 'calc(50% - 145px)' }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-sm">💰</span>
+                  <span className="text-xs font-semibold text-white">Sales Agent</span>
+                  <span className="activity-dot ml-auto" style={{ animationDelay: '0.5s' }} />
+                </div>
+                <p className="text-[11px] text-gray-400">Pipeline: <span className="text-teal font-medium">£24.5k</span></p>
+                <div className="mt-1.5 flex items-end gap-[2px] h-4">
+                  {[3,5,2,7,4,6].map((h, i) => (
+                    <div key={i} className="w-[3px] bg-slate-blue/50 rounded-sm" style={{ height: `${h*2}px` }} />
+                  ))}
+                </div>
+              </div>
+
+              {/* 6. Analytics Agent — Top Right */}
+              <div className="agent-card agent-card-float-6" style={{ top: 'calc(50% - 175px)', left: 'calc(50% + 15px)' }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-sm">📈</span>
+                  <span className="text-xs font-semibold text-white">Analytics</span>
+                  <span className="activity-dot ml-auto" style={{ animationDelay: '0.3s' }} />
+                </div>
+                <p className="text-[11px] text-gray-400">Response: <span className="text-teal font-medium">12s avg</span></p>
+                <div className="mt-1.5 flex items-end gap-[2px] h-4">
+                  {[2,3,5,4,7,6,8,5].map((h, i) => (
+                    <div key={i} className="w-[3px] bg-teal/40 rounded-sm" style={{ height: `${h*1.5}px` }} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Right: Phone Mockup */}
-          <div className="animate-fade-in-up delay-200 flex justify-center md:justify-end">
-            <div className="phone-mockup">
-              <div className="phone-screen">
-                <div className="phone-header">
-                  <div className="phone-header-dot" />
-                  <span className="phone-header-text">SCALEFLOW AI</span>
-                </div>
-                <div className="phone-chat">
-                  <div className="phone-msg-incoming" style={{ animationDelay: '1.5s' }}>
-                    Hi, do you accept new patients? I've got a toothache.
-                  </div>
-                  <div className="phone-msg-outgoing">
-                    Absolutely! Dr. Patel can see you at 4pm or tomorrow 10am — which works?
-                  </div>
-                  <div className="phone-msg-action">
-                    ✅ Booked — Dr. Patel, 4pm today
-                  </div>
-                  <div className="phone-msg-incoming" style={{ animationDelay: '2.5s' }}>
-                    Can you check if Bupa covers root canals?
-                  </div>
-                  <div className="phone-msg-outgoing" style={{ animationDelay: '3s' }}>
-                    Yes — Bupa covers 80%. I'll email the breakdown. Anything else?
-                  </div>
-                  <div className="phone-msg-action" style={{ animationDelay: '3.5s' }}>
-                    📋 Insurance verified — Bupa 80%
+        {/* ── Live Metric Strip ── */}
+        <div className="absolute bottom-0 left-0 right-0 border-t border-white/5 bg-black/30 backdrop-blur-md">
+          <div className="mx-auto max-w-7xl px-6 py-4 sm:px-8 lg:px-16">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+              {[
+                { icon: '📞', label: 'Calls Answered', value: '247', sub: 'today' },
+                { icon: '💬', label: 'Conversations', value: '34', sub: 'active now' },
+                { icon: '📅', label: 'Appointments', value: '128', sub: 'booked today' },
+                { icon: '💷', label: 'Revenue', value: '£12,450', sub: 'captured' },
+                { icon: '⚡', label: 'Response', value: '8s', sub: 'average' },
+                { icon: '🤖', label: 'AI Agents', value: '6', sub: 'running' },
+              ].map((stat) => (
+                <div key={stat.label} className="stat-card flex items-center gap-3">
+                  <span className="text-lg">{stat.icon}</span>
+                  <div>
+                    <p className="text-[11px] font-medium text-gray-400">{stat.label}</p>
+                    <p className="text-sm font-bold text-white">{stat.value} <span className="text-[11px] font-normal text-gray-500">{stat.sub}</span></p>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
