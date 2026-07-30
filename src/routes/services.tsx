@@ -118,20 +118,39 @@ const services = [
 function Services() {
   return (
     <>
-      {/* Hero */}
-      <section className="page-hero">
-        <div className="page-hero-grid" />
-        <div className="page-hero-orb page-hero-orb-teal" />
-        <div className="page-hero-orb page-hero-orb-blue" />
-        <div className="mx-auto max-w-7xl relative z-10 text-center">
-          <span className="page-hero-badge mb-5">⚡ Our Services</span>
-          <h1 className="mb-5 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-            Meet the <span className="gradient-text">Digital Employee</span> suite
+      {/* ═══ HERO: Service Constellation ═══ */}
+      <section className="ai-hero">
+        <div className="ai-hero-grid" />
+        <div className="ai-hero-glow ai-hero-glow-1 parallax-slow" />
+        <div className="ai-hero-glow ai-hero-glow-2 parallax-slow" />
+        <div className="ai-hero-glow ai-hero-glow-3 parallax-fast" />
+        <div className="hero-particle hero-particle-1" />
+        <div className="hero-particle hero-particle-2" />
+        <div className="hero-particle hero-particle-4" />
+
+        <div className="section-padding relative mx-auto w-full max-w-7xl pt-28 pb-20 text-center md:pt-32 md:pb-28 z-10">
+          <span className="hero-badge animate-fade-in-up inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
+            ⚡ Our Services
+          </span>
+          <h1 className="animate-fade-in-up delay-100 mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+            Meet the{" "}
+            <span className="gradient-text">Digital Employee</span> suite
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-gray-300">
+          <p className="animate-fade-in-up delay-200 mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
             Six AI services designed to cover every aspect of your lead and admin workflow.
             Mix and match to build your perfect automated office.
           </p>
+
+          {/* Service constellation grid */}
+          <div className="animate-fade-in-up delay-300 mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 max-w-5xl mx-auto">
+            {services.map((s, i) => (
+              <div key={s.title} className="hero-service-card text-center cursor-default" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className="text-3xl mb-2">{s.icon}</div>
+                <div className="text-xs font-semibold text-white">{s.title}</div>
+                <div className="text-[10px] text-gray-500 mt-1">{s.subtitle}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

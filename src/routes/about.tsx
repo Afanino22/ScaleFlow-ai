@@ -37,19 +37,23 @@ const values = [
 function About() {
   return (
     <>
-      {/* Hero */}
-      <section className="page-hero">
-        <div className="page-hero-grid" />
-        <div className="page-hero-orb page-hero-orb-teal" />
-        <div className="page-hero-orb page-hero-orb-blue" />
-        <div className="mx-auto max-w-7xl relative z-10">
+      {/* ═══ HERO: Mission ═══ */}
+      <section className="ai-hero">
+        <div className="ai-hero-grid" />
+        <div className="ai-hero-glow ai-hero-glow-1 parallax-slow" />
+        <div className="ai-hero-glow ai-hero-glow-3 parallax-fast" />
+        <div className="hero-particle hero-particle-1" />
+        <div className="hero-particle hero-particle-4" />
+        <div className="section-padding relative mx-auto w-full max-w-7xl pt-28 pb-20 md:pt-32 md:pb-28 z-10">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="page-hero-badge mb-5">🏢 About Us</span>
-            <h1 className="mb-5 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+            <span className="hero-badge animate-fade-in-up inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
+              🏢 About Us
+            </span>
+            <h1 className="animate-fade-in-up delay-100 mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
               We're on a mission to give every service business a{" "}
               <span className="gradient-text">24/7 team member</span>
             </h1>
-            <p className="text-lg text-gray-300">
+            <p className="animate-fade-in-up delay-200 mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
               ScaleFlow AI was founded on a simple insight: service-based businesses don't
               need more software. They need <strong className="text-white">people who never sleep</strong> — AI agents that
               handle the repetitive work so humans can focus on what humans do best.

@@ -184,22 +184,63 @@ function ROICalculator() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="page-hero">
-        <div className="page-hero-grid" />
-        <div className="page-hero-orb page-hero-orb-teal" />
-        <div className="page-hero-orb page-hero-orb-blue" />
-        <div className="mx-auto max-w-7xl relative z-10 text-center">
-          <span className="page-hero-badge mb-5">📊 ROI Calculator</span>
-          <h1 className="mb-5 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-            See how much{" "}
-            <span className="gradient-text">your business is losing</span>{" "}
-            to slow leads
-          </h1>
-          <p className="mx-auto max-w-2xl text-lg text-gray-300">
-            Enter your numbers below. We'll show you exactly how much revenue you're
-            leaving on the table — and what a ScaleFlow Digital Employee could save you.
-          </p>
+      {/* ═══ HERO: Calculator Dashboard ═══ */}
+      <section className="ai-hero">
+        <div className="ai-hero-grid" />
+        <div className="ai-hero-glow ai-hero-glow-1 parallax-slow" />
+        <div className="ai-hero-glow ai-hero-glow-2 parallax-slow" />
+        <div className="hero-particle hero-particle-2" />
+        <div className="hero-particle hero-particle-4" />
+        {/* Floating number particles */}
+        <div className="hero-number hero-number-1">£48K</div>
+        <div className="hero-number hero-number-2">+247%</div>
+        <div className="hero-number hero-number-3">30d</div>
+
+        <div className="section-padding relative mx-auto grid w-full max-w-7xl items-center gap-10 pt-28 pb-20 lg:grid-cols-2 md:pt-32 md:pb-28 z-10">
+          <div className="text-center lg:text-left">
+            <span className="hero-badge animate-fade-in-up inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
+              📊 ROI Calculator
+            </span>
+            <h1 className="animate-fade-in-up delay-100 mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+              See how much{" "}
+              <span className="gradient-text">your business is losing</span>{" "}
+              to slow leads
+            </h1>
+            <p className="animate-fade-in-up delay-200 mt-6 max-w-xl text-lg leading-relaxed text-gray-400 sm:text-xl">
+              Enter your numbers below. We'll show you exactly how much revenue you're
+              leaving on the table — and what a ScaleFlow Digital Employee could save you.
+            </p>
+          </div>
+          {/* Right: Dashboard visual */}
+          <div className="animate-fade-in-up delay-200 flex justify-center lg:justify-end">
+            <div className="hero-service-card w-full max-w-[380px] p-6">
+              <div className="text-xs uppercase tracking-wider text-gray-500 mb-4">Monthly Revenue Overview</div>
+              <div className="space-y-3">
+                {[
+                  { label: 'Leads Captured', value: 'Without AI: 47', pct: 40, color: 'bg-gray-600' },
+                  { label: 'Leads Captured', value: 'With AI: 142', pct: 95, color: 'bg-teal' },
+                  { label: 'Response Time', value: '12hr → 5s', pct: 90, color: 'bg-slate-blue' },
+                ].map((bar, i) => (
+                  <div key={i}>
+                    <div className="flex justify-between text-xs mb-1">
+                      <span className="text-gray-400">{bar.label}</span>
+                      <span className="text-white font-medium">{bar.value}</span>
+                    </div>
+                    <div className="h-2 bg-white/[0.04] rounded-full overflow-hidden">
+                      <div
+                        className={`h-full rounded-full ${bar.color} transition-all duration-1000`}
+                        style={{ width: `${bar.pct}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 pt-4 border-t border-white/[0.05] flex items-center justify-between">
+                <span className="text-sm text-gray-400">Estimated annual gain</span>
+                <span className="text-xl font-black gradient-text">+£94,000</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

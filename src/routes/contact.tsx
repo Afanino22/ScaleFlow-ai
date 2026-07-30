@@ -63,21 +63,45 @@ function Contact() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="page-hero">
-        <div className="page-hero-grid" />
-        <div className="page-hero-orb page-hero-orb-teal" />
-        <div className="page-hero-orb page-hero-orb-blue" />
-        <div className="mx-auto max-w-7xl relative z-10 text-center">
-          <span className="page-hero-badge mb-5">📬 Contact Us</span>
-          <h1 className="mb-5 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-            Let's{" "}
-            <span className="gradient-text">talk</span>
-          </h1>
-          <p className="mx-auto max-w-2xl text-lg text-gray-300">
-            Have a question? Want a demo? Just want to say hello?
-            We'd love to hear from you.
-          </p>
+      {/* ═══ HERO: Connection Hub ═══ */}
+      <section className="ai-hero">
+        <div className="ai-hero-grid" />
+        <div className="ai-hero-glow ai-hero-glow-1 parallax-slow" />
+        <div className="ai-hero-glow ai-hero-glow-2 parallax-slow" />
+        <div className="hero-particle hero-particle-3" />
+        <div className="hero-particle hero-particle-5" />
+        <div className="section-padding relative mx-auto grid w-full max-w-7xl items-center gap-10 pt-28 pb-20 lg:grid-cols-2 md:pt-32 md:pb-28 z-10">
+          <div className="text-center lg:text-left">
+            <span className="hero-badge animate-fade-in-up inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">📬 Contact Us</span>
+            <h1 className="animate-fade-in-up delay-100 mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+              Let's <span className="gradient-text">talk</span>
+            </h1>
+            <p className="animate-fade-in-up delay-200 mt-6 max-w-xl text-lg leading-relaxed text-gray-400 sm:text-xl">
+              Have a question? Want a demo? Just want to say hello? We'd love to hear from you.
+            </p>
+            <div className="animate-fade-in-up delay-300 mt-8 space-y-3">
+              {[
+                { icon: '✉️', label: 'Email', value: BUSINESS_EMAIL },
+                { icon: '📞', label: 'Phone', value: BUSINESS_PHONE },
+                { icon: '💬', label: 'WhatsApp', value: `+${WHATSAPP_NUMBER}` },
+              ].map((ch) => (
+                <div key={ch.label} className="hero-channel-card flex items-center gap-3">
+                  <span className="text-lg">{ch.icon}</span>
+                  <div>
+                    <div className="text-xs text-gray-500">{ch.label}</div>
+                    <div className="text-sm font-medium text-white">{ch.value}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="animate-fade-in-up delay-200 flex justify-center lg:justify-end">
+            <div className="hero-service-card w-full max-w-[380px] p-6 text-center">
+              <div className="text-lg font-semibold text-white mb-1">Book a Discovery Call</div>
+              <div className="text-sm text-gray-400 mb-5">15 minutes — no pressure, just honest advice</div>
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn-primary-lg animate-pulse-glow inline-flex">Schedule Now →</a>
+            </div>
+          </div>
         </div>
       </section>
 

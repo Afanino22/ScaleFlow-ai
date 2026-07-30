@@ -60,36 +60,44 @@ function Booking() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="page-hero">
-        <div className="page-hero-grid" />
-        <div className="page-hero-orb page-hero-orb-teal" />
-        <div className="page-hero-orb page-hero-orb-blue" />
-        <div className="mx-auto max-w-7xl relative z-10 text-center">
+      {/* ═══ HERO: Trial Gateway ═══ */}
+      <section className="ai-hero">
+        <div className="ai-hero-grid" />
+        <div className="ai-hero-glow ai-hero-glow-1 parallax-slow" />
+        <div className="ai-hero-glow ai-hero-glow-2 parallax-slow" />
+        <div className="hero-particle hero-particle-1" />
+        <div className="hero-particle hero-particle-3" />
+        <div className="section-padding relative mx-auto w-full max-w-7xl pt-28 pb-20 md:pt-32 md:pb-28 z-10 text-center">
           {sent ? (
             <>
-              <span className="page-hero-badge mb-5">🎉 Trial Started</span>
-              <h1 className="mb-5 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+              <span className="hero-badge animate-fade-in-up inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">🎉 Trial Started</span>
+              <h1 className="animate-fade-in-up delay-100 mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
                 You're all set, <span className="gradient-text">we're on it</span>
               </h1>
-              <p className="mx-auto max-w-2xl text-lg text-gray-300">
-                We'll be in touch within 24 hours to set up your free trial environment.
-                No calls needed — we'll do everything over email.
+              <p className="animate-fade-in-up delay-200 mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
+                We'll be in touch within 24 hours to set up your free trial environment. No calls needed — we'll do everything over email.
               </p>
-              <Link to="/" className="btn-primary mt-8 inline-flex">
-                Back to Home
-              </Link>
+              <Link to="/" className="btn-primary mt-8 inline-flex">Back to Home</Link>
             </>
           ) : (
             <>
-              <span className="page-hero-badge mb-5">🚀 Start Free Trial</span>
-              <h1 className="mb-5 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+              <span className="hero-badge animate-fade-in-up inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">🚀 Start Free Trial</span>
+              <h1 className="animate-fade-in-up delay-100 mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
                 Start your <span className="gradient-text">7-day free trial</span>
               </h1>
-              <p className="mx-auto max-w-2xl text-lg text-gray-300">
-                No calls. No commitment. Just tell us about your business and we'll set up a
-                personalised demo environment so you can see your Digital Employee in action.
+              <p className="animate-fade-in-up delay-200 mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
+                No calls. No commitment. Just tell us about your business and we'll set up a personalised demo environment.
               </p>
+              {/* Step indicators */}
+              <div className="animate-fade-in-up delay-300 mt-8 flex items-center justify-center gap-0">
+                <span className="hero-step-dot active" /><span className="hero-step-line" />
+                <span className="hero-step-dot" /><span className="hero-step-line" />
+                <span className="hero-step-dot" /><span className="hero-step-line" />
+                <span className="hero-step-dot" />
+              </div>
+              <div className="flex justify-center gap-8 mt-2 text-[10px] text-gray-500">
+                <span className="text-teal">Fill form</span><span>We build</span><span>You review</span><span>Go live</span>
+              </div>
             </>
           )}
         </div>

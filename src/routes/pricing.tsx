@@ -126,20 +126,72 @@ const faqs = [
 function Pricing() {
   return (
     <>
-      {/* Hero */}
-      <section className="page-hero">
-        <div className="page-hero-grid" />
-        <div className="page-hero-orb page-hero-orb-teal" />
-        <div className="page-hero-orb page-hero-orb-blue" />
-        <div className="mx-auto max-w-7xl relative z-10 text-center">
-          <span className="page-hero-badge mb-5">💷 Simple Pricing</span>
-          <h1 className="mb-5 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-            Simple pricing.{" "}
-            <span className="gradient-text">Massive ROI.</span>
-          </h1>
-          <p className="mx-auto max-w-2xl text-lg text-gray-300">
-            Every plan is designed to pay for itself within weeks. Use our ROI calculator to estimate your return.
-          </p>
+      {/* ═══ HERO: Three Pillars ═══ */}
+      <section className="ai-hero">
+        <div className="ai-hero-grid" />
+        <div className="ai-hero-glow ai-hero-glow-1 parallax-slow" />
+        <div className="ai-hero-glow ai-hero-glow-2 parallax-slow" />
+        <div className="ai-hero-glow ai-hero-glow-3 parallax-fast" />
+        <div className="hero-particle hero-particle-1" />
+        <div className="hero-particle hero-particle-3" />
+        <div className="hero-particle hero-particle-5" />
+
+        <div className="section-padding relative mx-auto w-full max-w-7xl pt-28 pb-20 z-10 md:pt-32 md:pb-28">
+          <div className="text-center">
+            <span className="hero-badge animate-fade-in-up inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
+              💷 Simple Pricing
+            </span>
+            <h1 className="animate-fade-in-up delay-100 mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+              Simple pricing.{" "}
+              <span className="gradient-text">Massive ROI.</span>
+            </h1>
+            <p className="animate-fade-in-up delay-200 mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
+              Every plan is designed to pay for itself within weeks. Use our ROI calculator to estimate your return.
+            </p>
+          </div>
+
+          {/* Three pillar cards */}
+          <div className="animate-fade-in-up delay-300 mt-14 grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+            {tiers.map((tier, i) => (
+              <div
+                key={tier.name}
+                className={`hero-service-card p-6 text-center flex flex-col ${
+                  tier.popular ? 'hero-popular-card border-teal/30' : ''
+                }`}
+                style={{ animationDelay: `${i * 0.15}s` }}
+              >
+                {tier.popular && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-teal px-3 py-0.5 text-[10px] font-bold uppercase text-[#0A0A0F] tracking-wider">
+                    Most Popular
+                  </span>
+                )}
+                <div className="relative">
+                  <div className="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-1">{tier.name}</div>
+                  <div className="text-xs text-gray-500 mb-4">{tier.subtitle}</div>
+                  <div className="text-4xl font-black text-white">
+                    {tier.monthly}<span className="text-lg font-normal text-gray-400">/mo</span>
+                  </div>
+                  <div className="text-xs text-gray-500 mt-2">
+                    {tier.setup} setup fee
+                  </div>
+                  <div className="mt-4">
+                    <a
+                      href={tier.buyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition-all ${
+                        tier.popular
+                          ? 'bg-teal text-[#0A0A0F] hover:bg-teal/90'
+                          : 'border border-white/10 text-white hover:border-teal/30 hover:bg-teal/5'
+                      }`}
+                    >
+                      Choose {tier.name} →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

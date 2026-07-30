@@ -282,20 +282,68 @@ function DemoPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="page-hero">
-        <div className="page-hero-grid" />
-        <div className="page-hero-orb page-hero-orb-teal" />
-        <div className="page-hero-orb page-hero-orb-blue" />
-        <div className="mx-auto max-w-7xl relative z-10 text-center">
-          <span className="page-hero-badge mb-5">💬 Live Interactive Demo</span>
-          <h1 className="mb-5 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-            Talk to a <span className="gradient-text">Digital Employee</span>
-          </h1>
-          <p className="mx-auto max-w-2xl text-lg text-gray-300">
-            Type any question you'd ask a real receptionist — our AI handles it instantly.
-            Bookings, pricing, insurance checks — try it yourself.
-          </p>
+      {/* ═══ HERO: Live Chat Preview ═══ */}
+      <section className="ai-hero">
+        <div className="ai-hero-grid" />
+        <div className="ai-hero-glow ai-hero-glow-1 parallax-slow" />
+        <div className="ai-hero-glow ai-hero-glow-2 parallax-slow" />
+        <div className="hero-particle hero-particle-1" />
+        <div className="hero-particle hero-particle-3" />
+        <div className="hero-particle hero-particle-5" />
+        {/* Chat bubble particles */}
+        <div className="hero-demo-bubble hero-demo-bubble-1">"Book an appointment?"</div>
+        <div className="hero-demo-bubble hero-demo-bubble-2">"What are your hours?"</div>
+        <div className="hero-demo-bubble hero-demo-bubble-3">"Do you take insurance?"</div>
+        <div className="hero-demo-bubble hero-demo-bubble-4">"Send me a quote"</div>
+
+        <div className="section-padding relative mx-auto grid w-full max-w-7xl items-center gap-10 pt-28 pb-20 lg:grid-cols-2 md:pt-32 md:pb-28">
+          <div className="text-center lg:text-left z-10">
+            <span className="hero-badge animate-fade-in-up inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
+              💬 Live Interactive Demo
+            </span>
+            <h1 className="animate-fade-in-up delay-100 mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+              Talk to a{" "}
+              <span className="gradient-text">Digital Employee</span>
+            </h1>
+            <p className="animate-fade-in-up delay-200 mt-6 max-w-xl text-lg leading-relaxed text-gray-400 sm:text-xl">
+              Type any question you'd ask a real receptionist — our AI handles it instantly.
+              Bookings, pricing, insurance checks — try it yourself.
+            </p>
+            <div className="animate-fade-in-up delay-300 mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
+              <Link to="/booking" className="btn-primary-lg animate-pulse-glow">
+                Start Your Free Trial →
+              </Link>
+            </div>
+          </div>
+          {/* Right: Chat preview card */}
+          <div className="animate-fade-in-up delay-200 flex justify-center lg:justify-end">
+            <div className="hero-service-card w-full max-w-[420px] p-0 overflow-hidden">
+              <div className="bg-white/[0.03] px-5 py-3 border-b border-white/[0.05] flex items-center gap-2">
+                <div className="w-2.5 h-2.5 rounded-full bg-teal animate-pulse" />
+                <span className="text-sm font-medium text-gray-300">AI Receptionist — Online</span>
+              </div>
+              <div className="p-5 space-y-4 min-h-[180px]">
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 rounded-full bg-teal/20 flex items-center justify-center text-sm flex-shrink-0">🤖</div>
+                  <div className="bg-white/[0.04] rounded-2xl rounded-tl-sm px-4 py-2.5 text-sm text-gray-300 max-w-[75%]">
+                    Hi! I'm your AI receptionist. How can I help you today?
+                  </div>
+                </div>
+                <div className="flex gap-3 justify-end">
+                  <div className="bg-teal/15 rounded-2xl rounded-tr-sm px-4 py-2.5 text-sm text-white max-w-[75%]">
+                    I'd like to book an appointment for next Tuesday
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-slate-blue/20 flex items-center justify-center text-sm flex-shrink-0">👤</div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 rounded-full bg-teal/20 flex items-center justify-center text-sm flex-shrink-0">🤖</div>
+                  <div className="bg-white/[0.04] rounded-2xl rounded-tl-sm px-4 py-2.5 text-sm text-gray-300">
+                    I can see 2 slots available. 10:00 AM or 2:30 PM — which works for you?
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

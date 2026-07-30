@@ -78,17 +78,22 @@ const faqs = [
 function FAQ() {
   return (
     <>
-      {/* Hero */}
-      <section className="page-hero">
-        <div className="page-hero-grid" />
-        <div className="page-hero-orb page-hero-orb-teal" />
-        <div className="page-hero-orb page-hero-orb-blue" />
-        <div className="mx-auto max-w-7xl relative z-10 text-center">
-          <span className="page-hero-badge mb-5">❓ Frequently Asked Questions</span>
-          <h1 className="mb-5 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+      {/* ═══ HERO: Knowledge Hub ═══ */}
+      <section className="ai-hero">
+        <div className="ai-hero-grid" />
+        <div className="ai-hero-glow ai-hero-glow-1 parallax-slow" />
+        <div className="ai-hero-glow ai-hero-glow-2 parallax-slow" />
+        <div className="hero-particle hero-particle-2" />
+        <div className="hero-particle hero-particle-5" />
+        <div className="hero-question hero-question-1">?</div>
+        <div className="hero-question hero-question-2">?</div>
+        <div className="hero-question hero-question-3">?</div>
+        <div className="section-padding relative mx-auto w-full max-w-7xl pt-28 pb-20 md:pt-32 md:pb-28 z-10 text-center">
+          <span className="hero-badge animate-fade-in-up inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">❓ FAQ</span>
+          <h1 className="animate-fade-in-up delay-100 mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
             Questions? <span className="gradient-text">We've got answers.</span>
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-gray-300">
+          <p className="animate-fade-in-up delay-200 mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
             Everything you need to know about ScaleFlow AI. Still have questions? We're happy to chat.
           </p>
         </div>
