@@ -8,6 +8,7 @@ const navLinks = [
   { to: "/pricing", label: "Pricing" },
   { to: "/roi", label: "ROI Calculator" },
   { to: "/industries", label: "Industries" },
+  { to: "/case-studies", label: "Case Studies" },
   { to: "/about", label: "About" },
   { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
