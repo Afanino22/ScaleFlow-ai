@@ -7,12 +7,16 @@ export const Route = createFileRoute("/terms")({
 function Terms() {
   return (
     <>
-      <section className="hero-gradient section-padding pt-28 pb-20">
-        <div className="mx-auto max-w-7xl text-center">
-          <h1 className="text-4xl font-bold text-white sm:text-5xl">
-            Terms of <span className="text-teal">Service</span>
+      <section className="page-hero">
+        <div className="page-hero-grid" />
+        <div className="page-hero-orb page-hero-orb-teal" />
+        <div className="page-hero-orb page-hero-orb-blue" />
+        <div className="mx-auto max-w-7xl relative z-10 text-center">
+          <span className="page-hero-badge mb-5">📄 Legal</span>
+          <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+            Terms of <span className="gradient-text">Service</span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-gray-300">Last updated: July 2026</p>
+          <p className="mx-auto mt-5 max-w-2xl text-gray-300">Last updated: July 2026</p>
         </div>
       </section>
       <section className="section-padding">

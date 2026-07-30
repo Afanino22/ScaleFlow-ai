@@ -78,18 +78,18 @@ const faqs = [
 function FAQ() {
   return (
     <>
-      {/* Header */}
-      <section className="hero-gradient section-padding pt-28 pb-16">
-        <div className="mx-auto max-w-7xl text-center">
-          <span className="mb-4 inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
-            FAQ
-          </span>
-          <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
-            Questions? <span className="text-teal">We've got answers.</span>
+      {/* Hero */}
+      <section className="page-hero">
+        <div className="page-hero-grid" />
+        <div className="page-hero-orb page-hero-orb-teal" />
+        <div className="page-hero-orb page-hero-orb-blue" />
+        <div className="mx-auto max-w-7xl relative z-10 text-center">
+          <span className="page-hero-badge mb-5">❓ Frequently Asked Questions</span>
+          <h1 className="mb-5 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+            Questions? <span className="gradient-text">We've got answers.</span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-gray-300">
-            Everything you need to know about ScaleFlow AI. Still have questions?
-            We're happy to chat.
+            Everything you need to know about ScaleFlow AI. Still have questions? We're happy to chat.
           </p>
         </div>
       </section>

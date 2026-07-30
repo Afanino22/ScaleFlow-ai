@@ -60,16 +60,17 @@ function Booking() {
 
   return (
     <>
-      {/* Header */}
-      <section className="hero-gradient section-padding pt-28 pb-20">
-        <div className="mx-auto max-w-7xl text-center">
+      {/* Hero */}
+      <section className="page-hero">
+        <div className="page-hero-grid" />
+        <div className="page-hero-orb page-hero-orb-teal" />
+        <div className="page-hero-orb page-hero-orb-blue" />
+        <div className="mx-auto max-w-7xl relative z-10 text-center">
           {sent ? (
             <>
-              <span className="mb-4 inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
-                Trial Started 🎉
-              </span>
-              <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
-                You're all set, <span className="text-teal">we're on it</span>
+              <span className="page-hero-badge mb-5">🎉 Trial Started</span>
+              <h1 className="mb-5 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+                You're all set, <span className="gradient-text">we're on it</span>
               </h1>
               <p className="mx-auto max-w-2xl text-lg text-gray-300">
                 We'll be in touch within 24 hours to set up your free trial environment.
@@ -81,11 +82,9 @@ function Booking() {
             </>
           ) : (
             <>
-              <span className="mb-4 inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
-                Start Free Trial
-              </span>
-              <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
-                Start your <span className="text-teal">7-day free trial</span>
+              <span className="page-hero-badge mb-5">🚀 Start Free Trial</span>
+              <h1 className="mb-5 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+                Start your <span className="gradient-text">7-day free trial</span>
               </h1>
               <p className="mx-auto max-w-2xl text-lg text-gray-300">
                 No calls. No commitment. Just tell us about your business and we'll set up a

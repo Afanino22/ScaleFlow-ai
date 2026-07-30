@@ -37,16 +37,17 @@ const values = [
 function About() {
   return (
     <>
-      {/* Header */}
-      <section className="hero-gradient section-padding pt-28 pb-20">
-        <div className="mx-auto max-w-7xl">
+      {/* Hero */}
+      <section className="page-hero">
+        <div className="page-hero-grid" />
+        <div className="page-hero-orb page-hero-orb-teal" />
+        <div className="page-hero-orb page-hero-orb-blue" />
+        <div className="mx-auto max-w-7xl relative z-10">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="mb-4 inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal">
-              About Us
-            </span>
-            <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
+            <span className="page-hero-badge mb-5">🏢 About Us</span>
+            <h1 className="mb-5 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
               We're on a mission to give every service business a{" "}
-              <span className="text-teal">24/7 team member</span>
+              <span className="gradient-text">24/7 team member</span>
             </h1>
             <p className="text-lg text-gray-300">
               ScaleFlow AI was founded on a simple insight: service-based businesses don't
