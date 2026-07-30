@@ -139,7 +139,7 @@ export default function ChatDemo() {
       {open && (
         <div className="fixed bottom-36 right-4 z-50 flex w-[calc(100vw-2rem)] max-w-sm flex-col rounded-2xl border border-white/10 bg-[#0A0A0F] shadow-2xl md:bottom-20 md:right-6 animate-fade-in-up">
           {/* Header */}
-          <div className="flex items-center gap-3 rounded-t-2xl bg-obsidian px-5 py-4">
+          <div className="flex items-center gap-3 rounded-t-2xl bg-[#0A0A0F] px-5 py-4">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal text-sm font-bold text-obsidian">SF</div>
             <div className="flex-1">
               <p className="text-sm font-semibold text-white">ScaleFlow Demo</p>

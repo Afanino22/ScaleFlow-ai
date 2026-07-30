@@ -662,116 +662,119 @@ function Home() {
       </section>
 
       {/* ════════════════════════════════════════════ */}
-      {/* HOW IT WORKS */}
+      {/* HOW IT WORKS — ANIMATED WORKFLOW */}
       {/* ════════════════════════════════════════════ */}
-      <section className="bg-obsidian section-padding">
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
+      <section className="relative bg-[#0A0A0F] section-padding overflow-hidden">
+        {/* Subtle background grid */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
+          style={{
+            backgroundImage: "linear-gradient(rgba(0,245,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(0,245,212,0.3) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+            maskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 70%)",
+            WebkitMaskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 70%)",
+          }}
+        />
+
+        <div className="mx-auto max-w-5xl relative z-10">
+          <div className="mx-auto mb-16 max-w-3xl text-center">
+            <span className="inline-block rounded-full border border-teal/20 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal mb-5">
+              ⚡ How It Works
+            </span>
             <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl">
-              How it works — <span className="text-teal">3 simple steps</span>
+              Your Digital Employee in{" "}
+              <span className="gradient-text">6 automated steps</span>
             </h2>
             <p className="text-lg text-gray-400">
-              We build, connect, and manage your Digital Employee. No coding. No hardware. No calls needed.
+              From enquiry to confirmed booking — fully automated. No coding. No hardware. No calls needed.
             </p>
           </div>
 
-          {/* Connection Flow Diagram */}
-          <div className="mb-16 rounded-2xl border border-white/10 bg-white/5 p-8">
-            <h3 className="mb-8 text-center text-sm font-semibold uppercase tracking-widest text-gray-400">
-              How your AI agent connects
-            </h3>
-            <div className="flex flex-col items-center gap-4 md:flex-row md:justify-center">
-              {/* Customer */}
-              <div className="flex flex-col items-center gap-2">
-                <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-teal/10 text-4xl">👤</div>
-                <p className="text-sm font-medium text-gray-400">Your Customer</p>
-                <p className="text-sm text-gray-500">Sends an enquiry</p>
-              </div>
-
-              {/* Arrow */}
-              <div className="text-2xl text-teal">→</div>
-
-              {/* Website / Chat */}
-              <div className="flex flex-col items-center gap-2">
-                <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-teal/10 text-4xl">💬</div>
-                <p className="text-sm font-medium text-gray-400">Your Website</p>
-                <p className="text-sm text-gray-500">AI chat widget</p>
-              </div>
-
-              {/* Arrow */}
-              <div className="text-2xl text-teal">→</div>
-
-              {/* ScaleFlow AI */}
-              <div className="flex flex-col items-center gap-2">
-                <div className="flex h-20 w-20 items-center justify-center rounded-2xl border-2 border-teal bg-obsidian text-4xl">🤖</div>
-                <p className="text-sm font-medium text-teal">ScaleFlow AI</p>
-                <p className="text-sm text-gray-500">Our cloud servers</p>
-              </div>
-
-              {/* Arrow */}
-              <div className="text-2xl text-teal">→</div>
-
-              {/* Your Tools */}
-              <div className="flex flex-col items-center gap-2">
-                <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-teal/10 text-4xl">📅</div>
-                <p className="text-sm font-medium text-gray-400">Your Calendar & CRM</p>
-                <p className="text-sm text-gray-500">Google, HubSpot, etc.</p>
-              </div>
+          {/* ── Animated Workflow Pipeline ── */}
+          <div className="relative">
+            {/* Connecting line — desktop */}
+            <div className="hidden md:block absolute top-[72px] left-[calc(8.33%+40px)] right-[calc(8.33%+40px)] h-px">
+              <div className="h-full w-full bg-gradient-to-r from-teal/40 via-slate-blue/40 to-teal/40"
+                style={{ maskImage: "linear-gradient(90deg, transparent 0%, black 20%, black 80%, transparent 100%)" }} />
             </div>
-            <p className="mt-6 text-center text-xs text-gray-500">
-              🖥️ Cloud-based. Nothing to install. Works on any device with a browser.
-            </p>
+
+            {/* Flow steps */}
+            <div className="grid grid-cols-1 md:grid-cols-6 gap-6 md:gap-3">
+              {[
+                { step: "01", icon: "👤", title: "Customer", desc: "Sends an enquiry via chat, email, SMS or call", color: "teal" },
+                { step: "02", icon: "🤖", title: "AI Answers", desc: "Responds instantly, 24/7, in natural language", color: "slate-blue" },
+                { step: "03", icon: "🎯", title: "Qualifies", desc: "Scores the lead, checks criteria, asks the right questions", color: "teal" },
+                { step: "04", icon: "📅", title: "Books", desc: "Finds availability, confirms the appointment in real-time", color: "slate-blue" },
+                { step: "05", icon: "📋", title: "Updates CRM", desc: "Logs everything — lead details, notes, appointment", color: "teal" },
+                { step: "06", icon: "📲", title: "Notifies You", desc: "Your team gets a summary. You just show up.", color: "slate-blue" },
+              ].map((item, i) => {
+                const isTeal = item.color === "teal";
+                const glowColor = isTeal ? "rgba(0,245,212,0.2)" : "rgba(67,97,238,0.2)";
+                const borderColor = isTeal ? "rgba(0,245,212,0.25)" : "rgba(67,97,238,0.25)";
+                const bgGlass = isTeal ? "rgba(0,245,212,0.04)" : "rgba(67,97,238,0.04)";
+                const accentText = isTeal ? "text-teal" : "text-slate-blue";
+                const iconBg = isTeal ? "bg-teal/10" : "bg-slate-blue/10";
+
+                return (
+                  <div key={item.step} className="flex flex-col items-center text-center group">
+                    {/* Step number connector — mobile */}
+                    {i > 0 && (
+                      <div className="md:hidden w-px h-6 bg-gradient-to-b from-teal/30 to-slate-blue/30 mb-2" />
+                    )}
+
+                    {/* Icon circle */}
+                    <div
+                      className={`relative flex h-[72px] w-[72px] items-center justify-center rounded-2xl ${iconBg} text-3xl transition-all duration-500 group-hover:scale-110 z-10`}
+                      style={{
+                        border: `1px solid ${borderColor}`,
+                        boxShadow: `0 0 0 0 ${glowColor}`,
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.boxShadow = `0 0 30px ${glowColor}`;
+                        e.currentTarget.style.borderColor = isTeal ? "rgba(0,245,212,0.5)" : "rgba(67,97,238,0.5)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.boxShadow = `0 0 0 0 ${glowColor}`;
+                        e.currentTarget.style.borderColor = borderColor;
+                      }}
+                    >
+                      <span>{item.icon}</span>
+                      {/* Pulse ring on hover */}
+                      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        style={{
+                          background: `radial-gradient(circle, ${glowColor} 0%, transparent 70%)`,
+                        }}
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="mt-4">
+                      <p className={`text-[10px] font-bold uppercase tracking-widest ${accentText} mb-1`}>
+                        {item.step}
+                      </p>
+                      <h4 className="text-sm font-bold text-white mb-1">{item.title}</h4>
+                      <p className="text-xs text-gray-400 leading-relaxed max-w-[140px] mx-auto">{item.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {[
-              {
-                num: "01",
-                title: "Tell us about your business",
-                desc: "Industry, services, pricing, calendar link, and CRM. We take it from there.",
-                icon: "📋",
-                color: "bg-teal/10 text-teal",
-              },
-              {
-                num: "02",
-                title: "We build & connect your AI",
-                desc: "We configure a Digital Employee that lives on your website, knows your business, and connects to your calendar & CRM via secure API.",
-                icon: "⚙️",
-                color: "bg-slate-blue/10 text-slate-blue",
-              },
-              {
-                num: "03",
-                title: "Go live — 24/7 lead capture",
-                desc: "Your AI agent answers every lead, books appointments, and updates your CRM. Your team just serves clients.",
-                icon: "🚀",
-                color: "bg-teal/10 text-teal",
-              },
-            ].map((step) => (
-              <div key={step.num} className="rounded-2xl border border-white/10 p-8 text-center transition-all hover:border-teal/30">
-                <div className={`mx-auto mb-5 flex h-24 w-24 items-center justify-center rounded-2xl text-4xl ${step.color}`}>
-                  {step.icon}
-                </div>
-                <p className="mb-2 text-sm font-bold uppercase tracking-widest text-teal">{step.num}</p>
-                <h3 className="mb-3 text-xl font-bold text-white">{step.title}</h3>
-                <p className="text-sm leading-relaxed text-gray-400">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Tech Stack */}
-          <div className="mt-12 rounded-2xl border border-white/10 bg-white/5 p-6">
-            <div className="grid gap-6 text-center md:grid-cols-3">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-teal">🖥️ Frontend</p>
-                <p className="mt-1 text-sm text-gray-400">AI chat widget on your website. Works on desktop, tablet, and mobile.</p>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-teal">☁️ Backend</p>
-                <p className="mt-1 text-sm text-gray-400">Secure cloud servers. Nothing to install. No IT team required.</p>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-teal">🔗 Integrations</p>
-                <p className="mt-1 text-sm text-gray-400">Connects to Google Calendar, Outlook, HubSpot, Salesforce, Pipedrive, and more.</p>
+          {/* Bottom CTA */}
+          <div className="mt-20 text-center">
+            <div className="mx-auto max-w-2xl rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm p-10">
+              <p className="text-lg text-gray-300 mb-2">
+                <span className="text-teal font-semibold">Cloud-based.</span> Nothing to install.
+              </p>
+              <p className="text-sm text-gray-500 mb-6">
+                Works on any device with a browser. Integrates with Google Calendar, Outlook, HubSpot, Salesforce, Pipedrive, and more.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                {["Google Calendar", "Outlook", "HubSpot", "Salesforce", "Pipedrive"].map((tool) => (
+                  <span key={tool} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-gray-400 transition-all hover:border-teal/30 hover:text-teal">
+                    {tool}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

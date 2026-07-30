@@ -235,7 +235,7 @@ function Industries() {
       </section>
 
       {/* CTA */}
-      <section className="bg-obsidian section-padding text-center">
+      <section className="bg-[#0A0A0F] section-padding text-center">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl">
             Don't see your industry?

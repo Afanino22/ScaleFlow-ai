@@ -61,7 +61,7 @@ export const Route = createRootRoute({
     ],
   }),
   notFoundComponent: () => (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-obsidian">
+    <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-[#0A0A0F]">
       <h1 className="text-6xl font-bold text-teal">404</h1>
       <p className="text-gray-400">This page doesn't exist.</p>
       <a href="/" className="btn-primary mt-4">

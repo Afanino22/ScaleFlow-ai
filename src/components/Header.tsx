@@ -17,7 +17,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-obsidian/90 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0A0A0F]/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8 lg:px-16">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 text-xl font-bold text-white" onClick={() => setMenuOpen(false)}>
@@ -81,7 +81,7 @@ export default function Header() {
             onClick={() => setMenuOpen(false)}
           />
           {/* Menu panel */}
-          <div className="fixed right-0 top-16 z-50 flex h-[calc(100vh-4rem)] w-72 flex-col gap-1 border-l border-white/10 bg-obsidian px-6 pb-8 pt-6 shadow-2xl md:hidden animate-fade-in-left">
+          <div className="fixed right-0 top-16 z-50 flex h-[calc(100vh-4rem)] w-72 flex-col gap-1 border-l border-white/10 bg-[#0A0A0F] px-6 pb-8 pt-6 shadow-2xl md:hidden animate-fade-in-left">
             {navLinks.map((link) => (
               <Link
                 key={link.to}

@@ -25,38 +25,46 @@ const footerLinks = {
   Resources: [
     { to: "/demo", label: "Live Demo" },
     { to: "/roi", label: "ROI Calculator" },
-    { to: "/booking", label: "Start Free Trial" },
-    { to: "/contact", label: "Book a Call" },
+    { to: "/booking", label: "Book a Demo" },
+    { to: "/contact", label: "Contact Us" },
   ],
 };
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-obsidian">
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-16">
-        <div className="grid gap-12 md:grid-cols-4">
-          {/* Brand Column */}
-          <div className="md:col-span-1">
-            <Link to="/" className="flex items-center gap-3 text-xl font-bold text-white">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-teal text-base font-black text-obsidian">
+    <footer className="relative border-t border-white/[0.06] bg-[#06060C]">
+      {/* Subtle top glow line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal/30 to-transparent" />
+
+      <div className="mx-auto max-w-7xl px-6 pt-20 pb-12 sm:px-8 lg:px-16">
+        {/* Main grid */}
+        <div className="grid gap-12 md:grid-cols-5">
+          {/* Brand Column — wider */}
+          <div className="md:col-span-2">
+            <Link to="/" className="group inline-flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-teal to-teal/70 text-base font-black text-obsidian shadow-lg shadow-teal/20 transition-all duration-300 group-hover:shadow-teal/40 group-hover:scale-105">
                 SF
               </span>
-              <span>
+              <span className="text-xl font-bold text-white">
                 Scale<span className="text-teal">Flow</span>
+                <span className="ml-1.5 rounded-full bg-teal/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-teal">AI</span>
               </span>
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-gray-400">
-              We build <strong className="text-white">Digital Employees</strong> for
-              service-based businesses. AI agents that handle leads, bookings, and
-              admin — so your team can focus on what matters.
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-gray-400">
+              We build <span className="font-semibold text-white">Digital Employees</span> for
+              service-based businesses — AI agents that handle leads, bookings, and
+              admin so your team can focus on what matters.
             </p>
-            <p className="mt-3 text-xs text-gray-500">📍 Proudly based in Birmingham, UK</p>
+            <div className="mt-4 flex items-center gap-2 text-xs text-gray-500">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
+              Based in Birmingham, UK — serving clients worldwide
+            </div>
           </div>
 
           {/* Link Columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-300">
+              <h4 className="mb-5 text-xs font-bold uppercase tracking-[0.15em] text-gray-300">
                 {title}
               </h4>
               <ul className="space-y-3">
@@ -64,8 +72,9 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       to={link.to}
-                      className="text-sm text-gray-400 transition-colors hover:text-teal"
+                      className="group inline-flex items-center gap-2 text-sm text-gray-400 transition-all duration-200 hover:text-teal"
                     >
+                      <span className="h-px w-0 bg-teal/50 transition-all duration-200 group-hover:w-3" />
                       {link.label}
                     </Link>
                   </li>
@@ -76,15 +85,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+        <div className="mt-16 flex flex-col items-center justify-between gap-5 border-t border-white/[0.06] pt-8 sm:flex-row">
           <p className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} ScaleFlow AI. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <Link to="/privacy" className="text-sm text-gray-500 transition-colors hover:text-teal">
+          <div className="flex gap-8">
+            <Link to="/privacy" className="text-sm text-gray-500 transition-colors hover:text-gray-300">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-sm text-gray-500 transition-colors hover:text-teal">
+            <Link to="/terms" className="text-sm text-gray-500 transition-colors hover:text-gray-300">
               Terms of Service
             </Link>
           </div>
