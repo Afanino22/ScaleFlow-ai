@@ -56,6 +56,62 @@ const tiers = [
   },
 ];
 
+// ─── Feature comparison data ───
+interface FeatureRow {
+  category: string;
+  items: { feature: string; tiers: (string | boolean)[] }[];
+}
+
+const featureRows: FeatureRow[] = [
+  {
+    category: "AI Agents",
+    items: [
+      { feature: "Smart Chat (Website)", tiers: [true, true, true] },
+      { feature: "SMS Chat", tiers: [false, true, true] },
+      { feature: "VoiceFlow (Phone AI)", tiers: [false, false, true] },
+      { feature: "InboxPilot (Email AI)", tiers: [false, "1 of 2", true] },
+      { feature: "LeadQualify scoring", tiers: [false, "1 of 2", true] },
+      { feature: "BookFlow scheduling", tiers: ["Optional", true, true] },
+    ],
+  },
+  {
+    category: "Integrations",
+    items: [
+      { feature: "Basic CRM sync", tiers: [true, true, true] },
+      { feature: "Advanced CRM & calendar sync", tiers: [false, true, true] },
+      { feature: "Calendar integration", tiers: [true, true, true] },
+      { feature: "Custom API integrations", tiers: [false, false, true] },
+      { feature: "Bespoke workflow automation", tiers: [false, false, true] },
+    ],
+  },
+  {
+    category: "Support & Monitoring",
+    items: [
+      { feature: "Email support", tiers: [true, true, true] },
+      { feature: "Phone support", tiers: [false, true, true] },
+      { feature: "Dedicated account manager", tiers: [false, false, true] },
+      { feature: "24/7 system monitoring", tiers: [false, false, true] },
+      { feature: "Weekly performance report", tiers: [true, false, false] },
+      { feature: "Monthly performance review", tiers: [false, true, false] },
+      { feature: "Quarterly business review", tiers: [false, false, true] },
+    ],
+  },
+];
+
+function checkmark(val: string | boolean) {
+  if (val === true) {
+    return (
+      <svg className="h-5 w-5 text-teal" fill="currentColor" viewBox="0 0 20 20">
+        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+      </svg>
+    );
+  }
+  if (val === false) {
+    return <span className="text-sm text-gray-700">—</span>;
+  }
+  return <span className="text-xs font-medium text-gray-500">{val}</span>;
+}
+
 const faqs = [
   { q: "How long does implementation take?", a: "Most services go live in 1–3 weeks. The discovery call identifies your needs, we build and test the agent, then deploy. Ongoing tweaks are included in your retainer." },
   { q: "Do I need technical knowledge?", a: "None at all. We handle everything — from connecting APIs to training the AI on your specific business. You'll get a simple dashboard to monitor performance." },
@@ -63,6 +119,8 @@ const faqs = [
   { q: "Can I cancel anytime?", a: "Yes. There's a 30-day minimum on the setup fee. After that, you can cancel your monthly retainer with 30 days' notice. No lock-in contracts." },
   { q: "Which industries do you serve?", a: "We specialise in Dental Clinics, Law Firms, Estate Agents, Car Dealerships, and general service-based SMBs. Our AI is trained on industry-specific language." },
   { q: "Do you integrate with my existing tools?", a: "Almost certainly. We connect with Cliniko, Clio, HubSpot, Pipedrive, Salesforce, Google Calendar, Outlook, Calendly, and 1000+ other tools via our automation stack." },
+  { q: "Is there a free trial?", a: "Yes! Every plan includes a 7-day free trial with no credit card required. We'll set up a fully functional agent tailored to your business so you can see the impact firsthand." },
+  { q: "What's included in the setup fee?", a: "The setup fee covers discovery, AI training on your business, CRM/calendar integrations, testing, and deployment. We don't charge extra for revisions during the build phase." },
 ];
 
 function Pricing() {
@@ -92,14 +150,14 @@ function Pricing() {
             {tiers.map((tier) => (
               <div
                 key={tier.name}
-                className={`relative rounded-2xl border-2 p-8 transition-all duration-300 ${
+                className={`pricing-card relative rounded-2xl border-2 p-8 ${
                   tier.popular
-                    ? "border-teal shadow-lg shadow-teal/10"
-                    : "border-gray-100 hover:border-gray-200"
+                    ? "pricing-card-popular border-teal"
+                    : "border-gray-100 hover:border-teal/40"
                 }`}
               >
                 {tier.popular && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-bold text-obsidian">
+                  <span className="popular-badge absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-bold text-obsidian">
                     Most Popular
                   </span>
                 )}
@@ -167,15 +225,74 @@ function Pricing() {
         </div>
       </section>
 
+      {/* ─── Feature Comparison Table ─── */}
+      <section className="section-padding bg-off-white">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-obsidian sm:text-4xl">
+              Compare <span className="gradient-text">features</span>
+            </h2>
+            <p className="mx-auto max-w-xl text-gray-500">
+              See exactly what you get at every tier. No hidden fees, no surprises.
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white">
+            {/* Table header */}
+            <div className="comparison-table-header hidden grid-cols-4 md:grid">
+              <div className="p-4 pl-6 text-sm font-semibold text-gray-400">Feature</div>
+              <div className="p-4 text-center text-sm font-semibold text-gray-600">Starter</div>
+              <div className="p-4 text-center text-sm font-semibold text-teal">Growth</div>
+              <div className="p-4 text-center text-sm font-semibold text-gray-600">Enterprise</div>
+            </div>
+
+            {/* Mobile header */}
+            <div className="comparison-table-header grid grid-cols-4 md:hidden">
+              <div className="p-3 pl-4 text-xs font-semibold text-gray-400">Feature</div>
+              <div className="p-3 text-center text-[10px] font-semibold text-gray-600">Starter</div>
+              <div className="p-3 text-center text-[10px] font-semibold text-teal">Growth</div>
+              <div className="p-3 text-center text-[10px] font-semibold text-gray-600">Enterprise</div>
+            </div>
+
+            {featureRows.map((section) => (
+              <div key={section.category}>
+                {/* Category header */}
+                <div className="border-t border-gray-100 bg-gray-50/50 px-6 py-3">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                    {section.category}
+                  </p>
+                </div>
+
+                {section.items.map((item) => (
+                  <div
+                    key={item.feature}
+                    className="comparison-row grid grid-cols-4 border-t border-gray-50 transition-colors hover:bg-teal/[0.03]"
+                  >
+                    <div className="flex items-center px-4 py-3.5 pl-6 text-sm text-gray-700 md:px-6">
+                      {item.feature}
+                    </div>
+                    {item.tiers.map((t, i) => (
+                      <div key={i} className="flex items-center justify-center px-2 py-3.5 md:px-6">
+                        {checkmark(t)}
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
-      <section className="bg-off-white section-padding">
+      <section className="section-padding">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-12 text-center text-3xl font-bold text-obsidian sm:text-4xl">
             Frequently Asked Questions
           </h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
-              <details key={faq.q} className="group rounded-xl border border-gray-200 bg-white">
+              <details key={faq.q} className="group rounded-xl border border-gray-200 bg-white transition-shadow hover:shadow-sm">
                 <summary className="flex cursor-pointer list-none items-center justify-between p-5 font-semibold text-obsidian transition-colors hover:text-teal">
                   {faq.q}
                   <svg className="h-5 w-5 text-gray-400 transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor">

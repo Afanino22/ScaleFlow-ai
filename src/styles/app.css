@@ -1066,3 +1066,45 @@
 .testimonial-slide {
   animation: slide-in 0.5s ease-out;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   Pricing Page — Cards, Badge & Comparison Table
+   ══════════════════════════════════════════════════════════════ */
+
+.pricing-card {
+  background: white;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+}
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+}
+.pricing-card-popular {
+  box-shadow: 0 0 0 1px rgba(0, 245, 212, 0.1), 0 8px 32px rgba(0, 245, 212, 0.08);
+}
+.pricing-card-popular:hover {
+  box-shadow: 0 0 0 2px rgba(0, 245, 212, 0.3), 0 0 40px rgba(0, 245, 212, 0.15), 0 24px 48px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes popular-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 245, 212, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(0, 245, 212, 0);
+  }
+}
+.popular-badge {
+  animation: popular-pulse 2.5s ease-in-out infinite;
+}
+
+/* Feature comparison table */
+.comparison-table-header {
+  background: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid #e5e7eb;
+}
+.comparison-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  transition: background 0.15s ease;
+}
