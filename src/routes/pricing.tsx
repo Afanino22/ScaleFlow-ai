@@ -237,7 +237,7 @@ function Pricing() {
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-white">
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0A0A0F]">
             {/* Table header */}
             <div className="comparison-table-header hidden grid-cols-4 md:grid">
               <div className="p-4 pl-6 text-sm font-semibold text-gray-400">Feature</div>
@@ -266,7 +266,7 @@ function Pricing() {
                 {section.items.map((item) => (
                   <div
                     key={item.feature}
-                    className="comparison-row grid grid-cols-4 border-t border-gray-50 transition-colors hover:bg-teal/[0.03]"
+                    className="comparison-row grid grid-cols-4 border-t border-white/5 transition-colors hover:bg-teal/[0.03]"
                   >
                     <div className="flex items-center px-4 py-3.5 pl-6 text-sm text-gray-400 md:px-6">
                       {item.feature}
